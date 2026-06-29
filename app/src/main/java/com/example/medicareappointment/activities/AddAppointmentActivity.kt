@@ -32,13 +32,8 @@ class AddAppointmentActivity : AppCompatActivity() {
 
         getIntentData()
 
-        binding.etAppointmentDate.setOnClickListener {
-            showDatePicker()
-        }
-
-        binding.etAppointmentTime.setOnClickListener {
-            showTimePicker()
-        }
+        binding.etAppointmentDate.setOnClickListener { showDatePicker() }
+        binding.etAppointmentTime.setOnClickListener { showTimePicker() }
 
         binding.btnSaveAppointment.setOnClickListener {
             saveOrUpdateAppointment()
@@ -105,13 +100,7 @@ class AddAppointmentActivity : AppCompatActivity() {
         val date = binding.etAppointmentDate.text.toString().trim()
         val time = binding.etAppointmentTime.text.toString().trim()
 
-        if (
-            patientName.isEmpty() ||
-            patientPhone.isEmpty() ||
-            doctorName.isEmpty() ||
-            date.isEmpty() ||
-            time.isEmpty()
-        ) {
+        if (patientName.isEmpty() || patientPhone.isEmpty() || doctorName.isEmpty() || date.isEmpty() || time.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             return
         }

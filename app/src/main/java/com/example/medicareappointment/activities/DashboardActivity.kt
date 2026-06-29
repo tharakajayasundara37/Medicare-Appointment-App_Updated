@@ -26,6 +26,7 @@ class DashboardActivity : AppCompatActivity() {
         binding.btnAppointments.setOnClickListener {
             startActivity(Intent(this, AppointmentListActivity::class.java))
         }
+
         binding.btnViewAllPatients.setOnClickListener {
             startActivity(Intent(this, PatientListActivity::class.java))
         }
@@ -44,24 +45,20 @@ class DashboardActivity : AppCompatActivity() {
         binding.txtPatientCount.text = dbHelper.getPatientCount().toString()
         binding.txtAppointmentCount.text = dbHelper.getAppointmentCount().toString()
 
-        val recentPatients = dbHelper.getRecentPatients()
-        binding.txtRecentPatients.text =
-            if (recentPatients.isEmpty()) {
-                "No recent patients"
-            } else {
-                recentPatients.joinToString("\n\n") {
-                    "👤 ${it.name}\n📞 ${it.phone}"
-                }
-            }
+        val patients = dbHelper.getRecentPatients()
 
-        val recentAppointments = dbHelper.getRecentAppointments()
-        binding.txtRecentAppointments.text =
-            if (recentAppointments.isEmpty()) {
-                "No recent appointments"
-            } else {
-                recentAppointments.joinToString("\n\n") {
-                    "📅 ${it.appointmentDate}\n👤 ${it.patientName}\n🩺 ${it.doctorName}"
-                }
-            }
+        binding.txtPatientName1.text = patients.getOrNull(0)?.name ?: "-"
+        binding.txtPatientPhone1.text = patients.getOrNull(0)?.phone ?: "-"
+
+        binding.txtPatientName2.text = patients.getOrNull(1)?.name ?: "-"
+        binding.txtPatientPhone2.text = patients.getOrNull(1)?.phone ?: "-"
+
+        val appointments = dbHelper.getRecentAppointments()
+
+        binding.txtAppDate1.text = appointments.getOrNull(0)?.appointmentDate ?: "-"
+        binding.txtAppPatient1.text = appointments.getOrNull(0)?.patientName ?: "-"
+
+        binding.txtAppDate2.text = appointments.getOrNull(1)?.appointmentDate ?: "-"
+        binding.txtAppPatient2.text = appointments.getOrNull(1)?.patientName ?: "-"
     }
 }

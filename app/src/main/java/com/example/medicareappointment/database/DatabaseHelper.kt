@@ -32,7 +32,8 @@ class DatabaseHelper(context: Context) :
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("""
+        db.execSQL(
+            """
             CREATE TABLE $TABLE_PATIENT (
                 $COL_PATIENT_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                 $COL_PATIENT_NAME TEXT NOT NULL,
@@ -40,9 +41,11 @@ class DatabaseHelper(context: Context) :
                 $COL_PATIENT_PHONE TEXT NOT NULL,
                 $COL_PATIENT_ADDRESS TEXT NOT NULL
             )
-        """.trimIndent())
+            """.trimIndent()
+        )
 
-        db.execSQL("""
+        db.execSQL(
+            """
             CREATE TABLE $TABLE_APPOINTMENT (
                 $COL_APPOINTMENT_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                 $COL_APPOINTMENT_PATIENT TEXT NOT NULL,
@@ -51,12 +54,14 @@ class DatabaseHelper(context: Context) :
                 $COL_APPOINTMENT_DATE TEXT NOT NULL,
                 $COL_APPOINTMENT_TIME TEXT NOT NULL
             )
-        """.trimIndent())
+            """.trimIndent()
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         if (oldVersion < 2) {
-            db.execSQL("""
+            db.execSQL(
+                """
                 CREATE TABLE IF NOT EXISTS $TABLE_APPOINTMENT (
                     $COL_APPOINTMENT_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     $COL_APPOINTMENT_PATIENT TEXT NOT NULL,
@@ -64,7 +69,8 @@ class DatabaseHelper(context: Context) :
                     $COL_APPOINTMENT_DATE TEXT NOT NULL,
                     $COL_APPOINTMENT_TIME TEXT NOT NULL
                 )
-            """.trimIndent())
+                """.trimIndent()
+            )
         }
 
         if (oldVersion < 3) {
@@ -82,13 +88,17 @@ class DatabaseHelper(context: Context) :
             put(COL_PATIENT_PHONE, phone)
             put(COL_PATIENT_ADDRESS, address)
         }
+
         return db.insert(TABLE_PATIENT, null, values)
     }
 
     fun getAllPatients(): ArrayList<Patient> {
         val patientList = ArrayList<Patient>()
         val db = readableDatabase
-        val cursor: Cursor = db.rawQuery("SELECT * FROM $TABLE_PATIENT", null)
+        val cursor: Cursor = db.rawQuery(
+            "SELECT $COL_PATIENT_ID, $COL_PATIENT_NAME, $COL_PATIENT_AGE, $COL_PATIENT_PHONE, $COL_PATIENT_ADDRESS FROM $TABLE_PATIENT",
+            null
+        )
 
         if (cursor.moveToFirst()) {
             do {
@@ -145,24 +155,29 @@ class DatabaseHelper(context: Context) :
             put(COL_APPOINTMENT_DATE, date)
             put(COL_APPOINTMENT_TIME, time)
         }
+
         return db.insert(TABLE_APPOINTMENT, null, values)
     }
 
     fun getAllAppointments(): ArrayList<Appointment> {
         val appointmentList = ArrayList<Appointment>()
         val db = readableDatabase
-        val cursor: Cursor = db.rawQuery("SELECT * FROM $TABLE_APPOINTMENT", null)
+
+        val cursor: Cursor = db.rawQuery(
+            "SELECT $COL_APPOINTMENT_ID, $COL_APPOINTMENT_PATIENT, $COL_APPOINTMENT_PHONE, $COL_APPOINTMENT_DOCTOR, $COL_APPOINTMENT_DATE, $COL_APPOINTMENT_TIME FROM $TABLE_APPOINTMENT",
+            null
+        )
 
         if (cursor.moveToFirst()) {
             do {
                 appointmentList.add(
                     Appointment(
-                        cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getString(4),
-                        cursor.getString(5)
+                        id = cursor.getInt(0),
+                        patientName = cursor.getString(1),
+                        patientPhone = cursor.getString(2),
+                        doctorName = cursor.getString(3),
+                        appointmentDate = cursor.getString(4),
+                        appointmentTime = cursor.getString(5)
                     )
                 )
             } while (cursor.moveToNext())
@@ -233,7 +248,7 @@ class DatabaseHelper(context: Context) :
         val db = readableDatabase
 
         val cursor = db.rawQuery(
-            "SELECT * FROM $TABLE_PATIENT ORDER BY $COL_PATIENT_ID DESC LIMIT 2",
+            "SELECT $COL_PATIENT_ID, $COL_PATIENT_NAME, $COL_PATIENT_AGE, $COL_PATIENT_PHONE, $COL_PATIENT_ADDRESS FROM $TABLE_PATIENT ORDER BY $COL_PATIENT_ID DESC LIMIT 2",
             null
         )
 
@@ -260,7 +275,7 @@ class DatabaseHelper(context: Context) :
         val db = readableDatabase
 
         val cursor = db.rawQuery(
-            "SELECT * FROM $TABLE_APPOINTMENT ORDER BY $COL_APPOINTMENT_ID DESC LIMIT 2",
+            "SELECT $COL_APPOINTMENT_ID, $COL_APPOINTMENT_PATIENT, $COL_APPOINTMENT_PHONE, $COL_APPOINTMENT_DOCTOR, $COL_APPOINTMENT_DATE, $COL_APPOINTMENT_TIME FROM $TABLE_APPOINTMENT ORDER BY $COL_APPOINTMENT_ID DESC LIMIT 2",
             null
         )
 
@@ -268,12 +283,12 @@ class DatabaseHelper(context: Context) :
             do {
                 appointmentList.add(
                     Appointment(
-                        cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getString(4),
-                        cursor.getString(5)
+                        id = cursor.getInt(0),
+                        patientName = cursor.getString(1),
+                        patientPhone = cursor.getString(2),
+                        doctorName = cursor.getString(3),
+                        appointmentDate = cursor.getString(4),
+                        appointmentTime = cursor.getString(5)
                     )
                 )
             } while (cursor.moveToNext())
