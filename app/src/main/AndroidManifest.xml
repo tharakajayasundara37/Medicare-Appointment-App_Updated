@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MediCareAppointment">
+        <activity android:name=".activities.HealthServiceActivity" android:exported="false" />
         <activity
             android:name=".activities.AddAppointmentActivity"
             android:exported="false" />

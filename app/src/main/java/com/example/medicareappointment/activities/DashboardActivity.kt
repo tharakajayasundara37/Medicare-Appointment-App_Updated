@@ -27,6 +27,13 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, AppointmentListActivity::class.java))
         }
 
+        binding.btnFindDoctor.setOnClickListener { openService(HealthServiceActivity.DOCTORS) }
+        binding.btnLabTests.setOnClickListener { openService(HealthServiceActivity.LABS) }
+        binding.btnMedicine.setOnClickListener { openService(HealthServiceActivity.MEDICINE) }
+        binding.btnTelehealth.setOnClickListener { openService(HealthServiceActivity.TELEHEALTH) }
+        binding.btnHealthPackages.setOnClickListener { openService(HealthServiceActivity.PACKAGES) }
+        binding.btnEmergency.setOnClickListener { openService(HealthServiceActivity.EMERGENCY) }
+
         binding.btnViewAllPatients.setOnClickListener {
             startActivity(Intent(this, PatientListActivity::class.java))
         }
@@ -34,6 +41,10 @@ class DashboardActivity : AppCompatActivity() {
         binding.btnViewAllAppointments.setOnClickListener {
             startActivity(Intent(this, AppointmentListActivity::class.java))
         }
+    }
+
+    private fun openService(service: String) {
+        startActivity(Intent(this, HealthServiceActivity::class.java).putExtra(HealthServiceActivity.EXTRA_SERVICE, service))
     }
 
     override fun onResume() {
