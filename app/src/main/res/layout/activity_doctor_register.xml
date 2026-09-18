@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:background="@color/backgroundColor">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:padding="24dp">
+
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="Doctor Registration"
+
+            android:textColor="@color/primaryBlue"
+
+            android:textSize="28sp"
+
+            android:textStyle="bold"/>
+
+
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:text="Submit your application for admin approval"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="15sp"/>
+
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etDoctorName"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="25dp"
+
+            android:hint="Doctor Name"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etSpecialization"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Specialization"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etDoctorPhone"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Phone Number"
+
+            android:inputType="phone"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etDoctorEmail"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Email"
+
+            android:inputType="textEmailAddress"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etDoctorPassword"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Password"
+
+            android:inputType="textPassword"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+
+        <Spinner
+
+            android:id="@+id/spinnerQualification"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:paddingStart="16dp"/>
+
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etRegistrationNumber"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Medical Registration Number"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etExperience"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Experience (Years)"
+
+            android:inputType="number"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+
+
+        <Spinner
+
+            android:id="@+id/spinnerWorkingDays"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:paddingStart="16dp"/>
+
+
+
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etStartTime"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Select Start Time"
+
+            android:focusable="false"
+
+            android:clickable="true"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+
+
+
+        <EditText
+
+            android:id="@+id/etEndTime"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Select End Time"
+
+            android:focusable="false"
+
+            android:clickable="true"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+
+
+
+        <!-- Appointment Duration -->
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:text="Appointment Duration"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="14sp"/>
+
+
+
+        <Spinner
+
+            android:id="@+id/spAppointmentDuration"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="8dp"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:paddingStart="16dp"/>
+
+
+
+
+
+
+
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:text="Qualification Document"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="14sp"/>
+
+
+
+
+
+
+        <Button
+
+            android:id="@+id/btnUploadDocument"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="8dp"
+
+            android:text="Choose Document"
+
+            android:textAllCaps="false"
+
+            android:backgroundTint="@color/primaryBlue"
+
+            android:textColor="@color/white"/>
+
+
+
+
+
+
+        <TextView
+
+            android:id="@+id/txtSelectedDocument"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:text="No document selected"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="14sp"/>
+
+
+
+
+
+
+
+        <Button
+
+            android:id="@+id/btnSubmitDoctor"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="25dp"
+
+            android:text="Submit Application"
+
+            android:textAllCaps="false"
+
+            android:textStyle="bold"
+
+            android:textColor="@color/white"
+
+            android:backgroundTint="@color/primaryBlue"/>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

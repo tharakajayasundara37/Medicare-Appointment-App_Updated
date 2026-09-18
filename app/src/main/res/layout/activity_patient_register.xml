@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:background="@color/backgroundColor">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:padding="24dp">
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="Patient Registration"
+
+            android:textColor="@color/primaryBlue"
+
+            android:textSize="28sp"
+
+            android:textStyle="bold"/>
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:text="Create your healthcare account"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="15sp"/>
+
+
+        <EditText
+
+            android:id="@+id/etPatientName"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="25dp"
+
+            android:hint="Full Name"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+        <EditText
+
+            android:id="@+id/etPatientAge"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Age"
+
+            android:inputType="number"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+        <EditText
+
+            android:id="@+id/etPatientPhone"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Phone Number"
+
+            android:inputType="phone"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+        <EditText
+
+            android:id="@+id/etPatientAddress"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="80dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Address"
+
+            android:gravity="top"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+        <EditText
+
+            android:id="@+id/etPatientEmail"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Email"
+
+            android:inputType="textEmailAddress"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+        <EditText
+
+            android:id="@+id/etPatientPassword"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="Password"
+
+            android:inputType="textPassword"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+        <Button
+
+            android:id="@+id/btnRegisterPatient"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="25dp"
+
+            android:text="Create Account"
+
+            android:textAllCaps="false"
+
+            android:textStyle="bold"
+
+            android:textColor="@color/white"
+
+            android:backgroundTint="@color/primaryBlue"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

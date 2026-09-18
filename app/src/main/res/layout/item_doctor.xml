@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_soft_card"
+    android:orientation="vertical"
+    android:padding="18dp">
+
+
+    <TextView
+        android:id="@+id/tvDoctorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctor Name"
+        android:textColor="@color/textDark"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/tvDoctorSpecialization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Specialization"
+        android:textColor="@color/textGray"
+        android:textSize="15sp"/>
+
+
+    <TextView
+        android:id="@+id/tvDoctorPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Phone"
+        android:textColor="@color/textGray"
+        android:textSize="14sp"/>
+
+
+    <Button
+        android:id="@+id/btnSelectDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:text="Select Doctor"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/primaryBlue"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>

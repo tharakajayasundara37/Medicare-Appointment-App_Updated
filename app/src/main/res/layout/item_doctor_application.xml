@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+
+    android:layout_marginBottom="16dp"
+
+    card_view:cardCornerRadius="18dp"
+
+    card_view:cardElevation="5dp">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:padding="20dp">
+
+
+
+        <TextView
+
+            android:id="@+id/txtDoctorApplicationName"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="Dr. Name"
+
+            android:textColor="@color/textDark"
+
+            android:textSize="21sp"
+
+            android:textStyle="bold"/>
+
+
+
+
+        <TextView
+
+            android:id="@+id/txtDoctorApplicationSpecialization"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:text="Cardiology"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="15sp"/>
+
+
+
+
+        <TextView
+
+            android:id="@+id/txtDoctorApplicationPhone"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="6dp"
+
+            android:text="Phone : 077xxxxxxx"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="14sp"/>
+
+
+
+
+        <TextView
+
+            android:id="@+id/txtDoctorApplicationQualification"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="6dp"
+
+            android:text="MBBS, MD"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="14sp"/>
+
+
+
+
+        <TextView
+
+            android:id="@+id/txtDoctorApplicationExperience"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="6dp"
+
+            android:text="Experience : 10 Years"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="14sp"/>
+
+
+
+
+        <TextView
+
+            android:id="@+id/txtDoctorApplicationWorkingTime"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="6dp"
+
+            android:text="Mon-Fri | 8AM - 5PM"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="14sp"/>
+
+
+
+
+
+        <TextView
+
+            android:id="@+id/txtDoctorApplicationStatus"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:background="@drawable/bg_status_pending"
+
+            android:paddingStart="14dp"
+
+            android:paddingTop="6dp"
+
+            android:paddingEnd="14dp"
+
+            android:paddingBottom="6dp"
+
+            android:text="Pending"
+
+            android:textColor="@color/white"
+
+            android:textSize="13sp"
+
+            android:textStyle="bold"/>
+
+
+
+
+
+        <!-- View Document -->
+
+        <Button
+
+            android:id="@+id/btnViewDocument"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="45dp"
+
+            android:layout_marginTop="12dp"
+
+            android:text="View Qualification Document"
+
+            android:textAllCaps="false"
+
+            android:textColor="@color/white"
+
+            android:backgroundTint="@color/primaryBlue"/>
+
+
+
+
+
+        <!-- Approve Reject Buttons -->
+
+        <LinearLayout
+
+            android:id="@+id/layoutDoctorActions"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="18dp"
+
+            android:orientation="horizontal">
+
+
+
+            <Button
+
+                android:id="@+id/btnApproveDoctor"
+
+                android:layout_width="0dp"
+
+                android:layout_height="45dp"
+
+                android:layout_weight="1"
+
+                android:text="Approve"
+
+                android:textAllCaps="false"
+
+                android:textColor="@color/white"
+
+                android:backgroundTint="#4CAF50"/>
+
+
+
+
+            <Space
+
+                android:layout_width="10dp"
+
+                android:layout_height="1dp"/>
+
+
+
+
+            <Button
+
+                android:id="@+id/btnRejectDoctor"
+
+                android:layout_width="0dp"
+
+                android:layout_height="45dp"
+
+                android:layout_weight="1"
+
+                android:text="Reject"
+
+                android:textAllCaps="false"
+
+                android:textColor="@color/white"
+
+                android:backgroundTint="#F44336"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

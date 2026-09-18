@@ -1,68 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
+
     android:background="@color/backgroundColor">
 
+
     <LinearLayout
+
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
+
         android:orientation="vertical"
+
         android:padding="24dp">
 
+
+
         <TextView
+
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
+
             android:text="Create Appointment"
+
             android:textColor="@color/textDark"
+
             android:textSize="28sp"
+
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etPatientName"
+
+
+
+
+        <!-- Patient Information -->
+
+        <androidx.cardview.widget.CardView
+
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
+
             android:layout_marginTop="24dp"
-            android:hint="Patient Name" />
 
-        <EditText
-            android:id="@+id/etPatientPhone"
-            android:layout_width="match_parent"
+            app:cardCornerRadius="16dp"
+
+            app:cardElevation="5dp">
+
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+
+                android:padding="16dp">
+
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Patient Information"
+
+                    android:textColor="@color/primaryBlue"
+
+                    android:textSize="18sp"
+
+                    android:textStyle="bold"/>
+
+
+
+
+                <EditText
+
+                    android:id="@+id/etPatientName"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="50dp"
+
+                    android:layout_marginTop="12dp"
+
+                    android:hint="Patient Name"
+
+                    android:enabled="false"
+
+                    android:background="@drawable/bg_soft_card"
+
+                    android:padding="12dp"/>
+
+
+
+
+                <EditText
+
+                    android:id="@+id/etPatientPhone"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="50dp"
+
+                    android:layout_marginTop="10dp"
+
+                    android:hint="Patient Phone Number"
+
+                    android:inputType="phone"
+
+                    android:enabled="false"
+
+                    android:background="@drawable/bg_soft_card"
+
+                    android:padding="12dp"/>
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Patient Phone Number"
-            android:inputType="phone" />
 
-        <EditText
-            android:id="@+id/etDoctorName"
+            android:layout_marginTop="20dp"
+
+            android:text="Select Doctor"
+
+            android:textColor="@color/textDark"
+
+            android:textSize="15sp"
+
+            android:textStyle="bold"/>
+
+
+
+
+
+        <Spinner
+
+            android:id="@+id/spDoctor"
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Doctor Name" />
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="8dp"
+
+            android:background="@drawable/bg_soft_card"/>
+
+
+
+
+
+
 
         <EditText
+
             android:id="@+id/etAppointmentDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Select Appointment Date" />
 
-        <EditText
-            android:id="@+id/etAppointmentTime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
+            android:layout_height="55dp"
+
             android:layout_marginTop="16dp"
-            android:hint="Select Appointment Time" />
+
+            android:clickable="true"
+
+            android:focusable="false"
+
+            android:hint="Select Appointment Date"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="16dp"/>
+
+
+
+
+
+
+
+        <!-- Available Time Slots -->
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp"
+
+            android:text="Select Available Time"
+
+            android:textColor="@color/textDark"
+
+            android:textSize="15sp"
+
+            android:textStyle="bold"/>
+
+
+
+
+
+        <Spinner
+
+            android:id="@+id/spTimeSlot"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="8dp"
+
+            android:background="@drawable/bg_soft_card"
+
+            android:padding="8dp"/>
+
+
+
+
+
+
 
         <Button
+
             android:id="@+id/btnSaveAppointment"
+
             android:layout_width="match_parent"
+
             android:layout_height="55dp"
+
             android:layout_marginTop="30dp"
+
             android:backgroundTint="@color/primaryBlue"
-            android:text="Save Appointment"
+
+            android:text="Book Appointment"
+
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+
+            android:textColor="@color/white"/>
+
 
     </LinearLayout>
+
+
 </ScrollView>

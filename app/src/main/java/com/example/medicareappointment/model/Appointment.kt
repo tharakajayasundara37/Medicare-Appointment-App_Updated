@@ -6,5 +6,6 @@ data class Appointment(
     val patientPhone: String,
     val doctorName: String,
     val appointmentDate: String,
-    val appointmentTime: String
+    val appointmentTime: String,
+    val appointmentStatus: String = "Pending"
 )

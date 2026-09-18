@@ -1,39 +1,342 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/backgroundColor" android:fillViewport="true">
-  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="20dp" android:paddingTop="18dp" android:paddingEnd="20dp" android:paddingBottom="32dp">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
-      <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MEDICARE" android:textColor="@color/primaryBlue" android:textSize="12sp" android:textStyle="bold" android:letterSpacing="0.18" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="Good morning" android:textColor="@color/textDark" android:textSize="26sp" android:textStyle="bold" />
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:fillViewport="true">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingStart="20dp"
+      android:paddingTop="18dp"
+      android:paddingEnd="20dp"
+      android:paddingBottom="32dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MEDICARE"
+            android:textColor="@color/primaryBlue"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.18"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Good morning"
+            android:textColor="@color/textDark"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+
       </LinearLayout>
-      <TextView android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_service_teal" android:gravity="center" android:text="M" android:textColor="@color/primaryBlue" android:textSize="18sp" android:textStyle="bold" />
+
+
+      <TextView
+          android:id="@+id/btnAdminLogin"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:background="@drawable/bg_service_teal"
+          android:gravity="center"
+          android:text="🔒"
+          android:textSize="20sp"
+          android:clickable="true"
+          android:focusable="true" />
+
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:background="@drawable/bg_hero" android:orientation="vertical" android:padding="24dp">
-      <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Healthcare, made simple" android:textColor="@color/white" android:textSize="25sp" android:textStyle="bold" />
-      <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Find trusted doctors, manage appointments and access essential care from one place." android:textColor="#D9F2EF" android:textSize="14sp" android:lineSpacingExtra="3dp" />
-      <Button android:id="@+id/btnFindDoctor" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="20dp" android:backgroundTint="@color/white" android:text="Find a doctor" android:textAllCaps="false" android:textColor="@color/deepBlue" android:textSize="15sp" android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_hero"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Healthcare, made simple"
+          android:textColor="@color/white"
+          android:textSize="25sp"
+          android:textStyle="bold"/>
+
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:text="Find trusted doctors, manage appointments and access essential care from one place."
+          android:textColor="#D9F2EF"
+          android:textSize="14sp"
+          android:lineSpacingExtra="3dp"/>
+
+
+      <Button
+          android:id="@+id/btnFindDoctor"
+          android:layout_width="match_parent"
+          android:layout_height="52dp"
+          android:layout_marginTop="20dp"
+          android:backgroundTint="@color/white"
+          android:text="Find a doctor"
+          android:textAllCaps="false"
+          android:textColor="@color/deepBlue"
+          android:textSize="15sp"
+          android:textStyle="bold"/>
+
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="horizontal">
-      <LinearLayout android:layout_width="0dp" android:layout_height="96dp" android:layout_marginEnd="6dp" android:layout_weight="1" android:background="@drawable/bg_soft_card" android:gravity="center" android:orientation="vertical"><TextView android:id="@+id/txtAppointmentCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/primaryBlue" android:textSize="28sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Appointments" android:textColor="@color/textGray" android:textSize="12sp" /></LinearLayout>
-      <LinearLayout android:layout_width="0dp" android:layout_height="96dp" android:layout_marginStart="6dp" android:layout_weight="1" android:background="@drawable/bg_soft_card" android:gravity="center" android:orientation="vertical"><TextView android:id="@+id/txtPatientCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/deepBlue" android:textSize="28sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Family profiles" android:textColor="@color/textGray" android:textSize="12sp" /></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="96dp"
+          android:layout_marginEnd="6dp"
+          android:layout_weight="1"
+          android:background="@drawable/bg_soft_card"
+          android:gravity="center"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtAppointmentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/primaryBlue"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Appointments"
+            android:textColor="@color/textGray"
+            android:textSize="12sp"/>
+
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="96dp"
+          android:layout_marginStart="6dp"
+          android:layout_weight="1"
+          android:background="@drawable/bg_soft_card"
+          android:gravity="center"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtPatientCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/deepBlue"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Family profiles"
+            android:textColor="@color/textGray"
+            android:textSize="12sp"/>
+
+      </LinearLayout>
+
     </LinearLayout>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:text="Explore services" android:textColor="@color/textDark" android:textSize="20sp" android:textStyle="bold" />
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Everything you need for better care" android:textColor="@color/textGray" android:textSize="13sp" />
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="horizontal">
-      <TextView android:id="@+id/btnAppointments" style="@style/ServiceTile" android:layout_marginEnd="6dp" android:background="@drawable/bg_service_teal" android:text="Appointments\nBook &amp; track" android:textColor="@color/deepBlue" />
-      <TextView android:id="@+id/btnPatients" style="@style/ServiceTile" android:layout_marginStart="6dp" android:background="@drawable/bg_service_warm" android:text="My family\nHealth profiles" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Explore services"
+        android:textColor="@color/textDark"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Everything you need for better care"
+        android:textColor="@color/textGray"
+        android:textSize="13sp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/btnAppointments"
+          style="@style/ServiceTile"
+          android:layout_marginEnd="6dp"
+          android:background="@drawable/bg_service_teal"
+          android:text="Appointments\nBook &amp; track"
+          android:textColor="@color/deepBlue"/>
+
+      <TextView
+          android:id="@+id/btnPatients"
+          style="@style/ServiceTile"
+          android:layout_marginStart="6dp"
+          android:background="@drawable/bg_service_warm"
+          android:text="My family\nHealth profiles"/>
+
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
-      <TextView android:id="@+id/btnLabTests" style="@style/ServiceTile" android:layout_marginEnd="6dp" android:background="@drawable/bg_service_warm" android:text="Lab tests\nHome collection" />
-      <TextView android:id="@+id/btnMedicine" style="@style/ServiceTile" android:layout_marginStart="6dp" android:background="@drawable/bg_service_teal" android:text="Medicine\nUpload prescription" android:textColor="@color/deepBlue" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/btnLabTests"
+          style="@style/ServiceTile"
+          android:layout_marginEnd="6dp"
+          android:background="@drawable/bg_service_warm"
+          android:text="Lab tests\nHome collection"/>
+
+      <TextView
+          android:id="@+id/btnMedicine"
+          style="@style/ServiceTile"
+          android:layout_marginStart="6dp"
+          android:background="@drawable/bg_service_teal"
+          android:text="Medicine\nUpload prescription"
+          android:textColor="@color/deepBlue"/>
+
     </LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
-      <TextView android:id="@+id/btnTelehealth" style="@style/ServiceTile" android:layout_marginEnd="6dp" android:background="@drawable/bg_service_teal" android:text="Video care\nConsult remotely" android:textColor="@color/deepBlue" />
-      <TextView android:id="@+id/btnHealthPackages" style="@style/ServiceTile" android:layout_marginStart="6dp" android:background="@drawable/bg_service_warm" android:text="Health plans\nCheck-up packages" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+      <TextView
+          android:id="@+id/btnTelehealth"
+          style="@style/ServiceTile"
+          android:layout_marginEnd="6dp"
+          android:background="@drawable/bg_service_teal"
+          android:text="Video care\nConsult remotely"
+          android:textColor="@color/deepBlue"/>
+
+      <TextView
+          android:id="@+id/btnHealthPackages"
+          style="@style/ServiceTile"
+          android:layout_marginStart="6dp"
+          android:background="@drawable/bg_service_warm"
+          android:text="Health plans\nCheck-up packages"/>
+
     </LinearLayout>
-    <TextView android:id="@+id/btnEmergency" android:layout_width="match_parent" android:layout_height="68dp" android:layout_marginTop="20dp" android:background="@drawable/bg_soft_card" android:clickable="true" android:focusable="true" android:gravity="center_vertical" android:paddingHorizontal="20dp" android:text="Emergency assistance  •  Call 1990" android:textColor="@color/danger" android:textSize="16sp" android:textStyle="bold" />
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:gravity="center_vertical" android:orientation="horizontal"><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Recent appointment" android:textColor="@color/textDark" android:textSize="20sp" android:textStyle="bold" /><TextView android:id="@+id/btnViewAllAppointments" android:layout_width="wrap_content" android:layout_height="48dp" android:gravity="center" android:paddingHorizontal="8dp" android:text="View all" android:textColor="@color/primaryBlue" android:textStyle="bold" /></LinearLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_soft_card" android:orientation="vertical" android:padding="18dp"><TextView android:id="@+id/txtAppPatient1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No appointments yet" android:textColor="@color/textDark" android:textSize="17sp" android:textStyle="bold" /><TextView android:id="@+id/txtAppDate1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:text="Book your first appointment" android:textColor="@color/textGray" android:textSize="14sp" /></LinearLayout>
-    <TextView android:id="@+id/btnViewAllPatients" style="@style/HiddenDashboardView" /><TextView android:id="@+id/txtPatientName1" style="@style/HiddenDashboardView" /><TextView android:id="@+id/txtPatientPhone1" style="@style/HiddenDashboardView" /><TextView android:id="@+id/txtPatientName2" style="@style/HiddenDashboardView" /><TextView android:id="@+id/txtPatientPhone2" style="@style/HiddenDashboardView" /><TextView android:id="@+id/txtAppPatient2" style="@style/HiddenDashboardView" /><TextView android:id="@+id/txtAppDate2" style="@style/HiddenDashboardView" />
+
+    <TextView
+        android:id="@+id/btnEmergency"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_soft_card"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:text="Emergency assistance  •  Call 1990"
+        android:textColor="@color/danger"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Recent appointment"
+          android:textColor="@color/textDark"
+          android:textSize="20sp"
+          android:textStyle="bold"/>
+
+      <TextView
+          android:id="@+id/btnViewAllAppointments"
+          android:layout_width="wrap_content"
+          android:layout_height="48dp"
+          android:gravity="center"
+          android:paddingHorizontal="8dp"
+          android:text="View all"
+          android:textColor="@color/primaryBlue"
+          android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_soft_card"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+      <TextView
+          android:id="@+id/txtAppPatient1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="No appointments yet"
+          android:textColor="@color/textDark"
+          android:textSize="17sp"
+          android:textStyle="bold"/>
+
+      <TextView
+          android:id="@+id/txtAppDate1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="7dp"
+          android:text="Book your first appointment"
+          android:textColor="@color/textGray"
+          android:textSize="14sp"/>
+
+    </LinearLayout>
+
+
+    <TextView android:id="@+id/btnViewAllPatients" style="@style/HiddenDashboardView"/>
+    <TextView android:id="@+id/txtPatientName1" style="@style/HiddenDashboardView"/>
+    <TextView android:id="@+id/txtPatientPhone1" style="@style/HiddenDashboardView"/>
+    <TextView android:id="@+id/txtPatientName2" style="@style/HiddenDashboardView"/>
+    <TextView android:id="@+id/txtPatientPhone2" style="@style/HiddenDashboardView"/>
+    <TextView android:id="@+id/txtAppPatient2" style="@style/HiddenDashboardView"/>
+    <TextView android:id="@+id/txtAppDate2" style="@style/HiddenDashboardView"/>
+
   </LinearLayout>
+
 </ScrollView>

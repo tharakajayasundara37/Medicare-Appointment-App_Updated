@@ -3,64 +3,66 @@ package com.example.medicareappointment.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicareappointment.R
 import com.example.medicareappointment.model.Appointment
 
-class AppointmentAdapter(
-    private val appointmentList: ArrayList<Appointment>,
-    private val onDeleteClick: (Appointment) -> Unit,
-    private val onUpdateClick: (Appointment) -> Unit
-) : RecyclerView.Adapter<AppointmentAdapter.AppointmentViewHolder>() {
+class AdminRecentAppointmentAdapter(
+    private val appointmentList: ArrayList<Appointment>
+) : RecyclerView.Adapter<AdminRecentAppointmentAdapter.ViewHolder>() {
 
 
-    class AppointmentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
 
         val txtPatientName: TextView =
-            itemView.findViewById(R.id.txtPatientName)
+            itemView.findViewById(R.id.txtRecentPatientName)
+
 
         val txtDoctorName: TextView =
-            itemView.findViewById(R.id.txtDoctorName)
+            itemView.findViewById(R.id.txtRecentDoctorName)
+
 
         val txtDate: TextView =
-            itemView.findViewById(R.id.txtDate)
+            itemView.findViewById(R.id.txtRecentDate)
+
 
         val txtTime: TextView =
-            itemView.findViewById(R.id.txtTime)
+            itemView.findViewById(R.id.txtRecentTime)
+
 
         val txtStatus: TextView =
-            itemView.findViewById(R.id.txtAppointmentStatus)
+            itemView.findViewById(R.id.txtRecentStatus)
 
-        val btnUpdate: Button =
-            itemView.findViewById(R.id.btnUpdateAppointment)
-
-        val btnDelete: Button =
-            itemView.findViewById(R.id.btnCancelAppointment)
     }
 
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): AppointmentViewHolder {
+    ): ViewHolder {
+
 
         val view = LayoutInflater.from(parent.context)
             .inflate(
-                R.layout.item_appointment,
+                R.layout.item_recent_appointment,
                 parent,
                 false
             )
 
-        return AppointmentViewHolder(view)
+
+        return ViewHolder(view)
+
     }
 
 
+
     override fun onBindViewHolder(
-        holder: AppointmentViewHolder,
+        holder: ViewHolder,
         position: Int
     ) {
+
 
         val appointment = appointmentList[position]
 
@@ -68,11 +70,14 @@ class AppointmentAdapter(
         holder.txtPatientName.text =
             appointment.patientName
 
+
         holder.txtDoctorName.text =
             "Doctor : ${appointment.doctorName}"
 
+
         holder.txtDate.text =
             "Date : ${appointment.appointmentDate}"
+
 
         holder.txtTime.text =
             "Time : ${appointment.appointmentTime}"
@@ -82,7 +87,9 @@ class AppointmentAdapter(
             appointment.appointmentStatus
 
 
-        when (appointment.appointmentStatus) {
+
+        when(appointment.appointmentStatus) {
+
 
             "Pending" -> {
 
@@ -119,30 +126,10 @@ class AppointmentAdapter(
 
             }
 
-
-            else -> {
-
-                holder.txtStatus.setBackgroundResource(
-                    R.drawable.bg_status_pending
-                )
-
-            }
         }
 
-
-        holder.btnUpdate.setOnClickListener {
-
-            onUpdateClick(appointment)
-
-        }
-
-
-        holder.btnDelete.setOnClickListener {
-
-            onDeleteClick(appointment)
-
-        }
     }
+
 
 
     override fun getItemCount(): Int {
@@ -150,4 +137,19 @@ class AppointmentAdapter(
         return appointmentList.size
 
     }
+
+
+
+    fun updateList(
+        newList: ArrayList<Appointment>
+    ) {
+
+        appointmentList.clear()
+
+        appointmentList.addAll(newList)
+
+        notifyDataSetChanged()
+
+    }
+
 }

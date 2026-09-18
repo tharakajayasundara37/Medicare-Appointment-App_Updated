@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:background="@color/backgroundColor">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:padding="24dp">
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="Admin Profile"
+
+            android:textColor="@color/primaryBlue"
+
+            android:textSize="28sp"
+
+            android:textStyle="bold"/>
+
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+
+            android:id="@+id/imgAdminProfile"
+
+            android:layout_width="130dp"
+
+            android:layout_height="130dp"
+
+            android:layout_gravity="center"
+
+            android:layout_marginTop="30dp"
+
+            android:src="@drawable/ic_profile"
+
+            android:scaleType="centerCrop"
+
+            app:shapeAppearanceOverlay="@style/CircleImage"
+
+            xmlns:app="http://schemas.android.com/apk/res-auto"/>
+        <Button
+
+            android:id="@+id/btnChangeProfileImage"
+
+            android:layout_width="180dp"
+
+            android:layout_height="45dp"
+
+            android:layout_gravity="center"
+
+            android:layout_marginTop="12dp"
+
+            android:text="Change Photo"
+
+            android:textAllCaps="false"
+
+            android:backgroundTint="@color/primaryBlue"
+
+            android:textColor="@color/white"/>
+
+        <TextView
+
+            android:id="@+id/txtAdminName"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+
+            android:gravity="center"
+
+            android:text="System Administrator"
+
+            android:textSize="22sp"
+
+            android:textStyle="bold"
+
+            android:textColor="@color/textDark"/>
+
+
+
+        <TextView
+
+            android:id="@+id/txtAdminRole"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+
+            android:text="Super Admin"
+
+            android:textSize="15sp"
+
+            android:textColor="@color/textGray"/>
+
+
+
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:elevation="8dp"
+
+            android:layout_marginTop="30dp">
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+
+                android:padding="20dp">
+
+
+                <TextView
+
+                    android:id="@+id/txtAdminEmail"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Email : admin@medicare.com"
+
+                    android:textSize="16sp"/>
+
+
+
+                <TextView
+
+                    android:id="@+id/txtAdminPhone"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="12dp"
+
+                    android:text="Phone : 0770000000"
+
+                    android:textSize="16sp"/>
+
+
+
+                <TextView
+
+                    android:id="@+id/txtAdminCreated"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="12dp"
+
+                    android:text="Created Date"
+
+                    android:textSize="16sp"/>
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <Button
+
+            android:id="@+id/btnLogout"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="35dp"
+
+            android:text="Logout"
+
+            android:textAllCaps="false"
+
+            android:textStyle="bold"
+
+            android:textColor="@color/white"
+
+            android:backgroundTint="@color/dangerRed"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

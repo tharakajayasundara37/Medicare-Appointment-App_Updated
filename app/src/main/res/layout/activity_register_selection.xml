@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:fillViewport="true"
+
+    android:background="@color/backgroundColor">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+
+        android:gravity="center"
+
+        android:padding="24dp">
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Create Account"
+
+            android:textColor="@color/primaryBlue"
+
+            android:textSize="30sp"
+
+            android:textStyle="bold" />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:text="Choose how you want to join MediCare"
+
+            android:textColor="@color/textGray"
+
+            android:textSize="15sp" />
+
+
+        <!-- PATIENT CARD -->
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="40dp"
+
+            android:padding="4dp">
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+
+                android:padding="22dp">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Patient"
+
+                    android:textColor="@color/primaryBlue"
+
+                    android:textSize="22sp"
+
+                    android:textStyle="bold" />
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="6dp"
+
+                    android:text="Create a patient account to book and manage appointments."
+
+                    android:textColor="@color/textGray"
+
+                    android:textSize="14sp" />
+
+
+                <Button
+
+                    android:id="@+id/btnPatientRegister"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+
+                    android:layout_marginTop="20dp"
+
+                    android:text="Register as Patient"
+
+                    android:textAllCaps="false"
+
+                    android:textColor="@color/white"
+
+                    android:textStyle="bold"
+
+                    android:backgroundTint="@color/primaryBlue" />
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+        <!-- DOCTOR CARD -->
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="18dp"
+
+            android:padding="4dp">
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+
+                android:padding="22dp">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Doctor"
+
+                    android:textColor="@color/primaryBlue"
+
+                    android:textSize="22sp"
+
+                    android:textStyle="bold" />
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="6dp"
+
+                    android:text="Submit your doctor application for admin approval."
+
+                    android:textColor="@color/textGray"
+
+                    android:textSize="14sp" />
+
+
+                <Button
+
+                    android:id="@+id/btnDoctorRegister"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+
+                    android:layout_marginTop="20dp"
+
+                    android:text="Apply as Doctor"
+
+                    android:textAllCaps="false"
+
+                    android:textColor="@color/white"
+
+                    android:textStyle="bold"
+
+                    android:backgroundTint="@color/deepBlue" />
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+
+            android:id="@+id/txtBackToLogin"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+
+            android:padding="10dp"
+
+            android:text="Already have an account? Login"
+
+            android:textColor="@color/primaryBlue"
+
+            android:textSize="15sp"
+
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

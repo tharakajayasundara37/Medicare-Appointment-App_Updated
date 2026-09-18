@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <!-- Header -->
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+
+            android:gravity="center_vertical">
+
+
+            <TextView
+
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+
+                android:text="Dashboard"
+
+                android:textColor="@color/textDark"
+
+                android:textSize="30sp"
+
+                android:textStyle="bold"/>
+
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:id="@+id/imgAdminProfileIcon"
+
+                android:layout_width="50dp"
+
+                android:layout_height="50dp"
+
+                android:padding="2dp"
+
+                android:src="@drawable/ic_profile"
+
+                android:scaleType="centerCrop"
+
+                android:background="@drawable/bg_soft_card"
+
+                android:clickable="true"
+
+                android:focusable="true"
+
+                app:shapeAppearanceOverlay="@style/CircleImage"/>
+
+        </LinearLayout>
+
+        <!-- Summary Cards Row 1 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+
+            <!-- Appointment Card -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_soft_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Appointments"
+                    android:textColor="@color/textGray"
+                    android:textSize="13sp"/>
+
+
+                <TextView
+                    android:id="@+id/txtTotalAppointments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0"
+                    android:textColor="@color/textDark"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:text="This month"
+                    android:textColor="#4CAF50"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="1dp"/>
+
+
+
+            <!-- Patient Card -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_soft_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Patients"
+                    android:textColor="@color/textGray"
+                    android:textSize="13sp"/>
+
+
+                <TextView
+                    android:id="@+id/txtTotalPatients"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0"
+                    android:textColor="@color/textDark"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:text="Registered users"
+                    android:textColor="#2196F3"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+        <!-- Summary Cards Row 2 -->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+
+            <!-- Doctor Card -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_soft_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Doctors"
+                    android:textColor="@color/textGray"
+                    android:textSize="13sp"/>
+
+
+                <TextView
+                    android:id="@+id/txtTotalDoctors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0"
+                    android:textColor="@color/textDark"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+
+
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="1dp"/>
+
+
+
+            <!-- Reports Card -->
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_soft_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reports"
+                    android:textColor="@color/textGray"
+                    android:textSize="13sp"/>
+
+
+                <TextView
+                    android:id="@+id/txtTotalReports"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0"
+                    android:textColor="@color/textDark"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <!-- Appointment Overview -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Appointments Overview"
+            android:textColor="@color/textDark"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_soft_card"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly Appointment Activity"
+                android:textColor="@color/textGray"
+                android:textSize="16sp"/>
+
+
+            <TextView
+                android:id="@+id/txtAppointmentOverview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="No data available"
+                android:textColor="@color/primaryBlue"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+
+
+        <!-- Appointment Status -->
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Appointment Status"
+            android:textColor="@color/textDark"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_soft_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+
+            <TextView
+                android:id="@+id/txtPendingCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pending : 0"
+                android:textColor="#FF9800"
+                android:textSize="16sp"/>
+
+
+            <TextView
+                android:id="@+id/txtConfirmedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Confirmed : 0"
+                android:textColor="#4CAF50"
+                android:textSize="16sp"/>
+
+
+            <TextView
+                android:id="@+id/txtCompletedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Completed : 0"
+                android:textColor="#2196F3"
+                android:textSize="16sp"/>
+
+
+            <TextView
+                android:id="@+id/txtCancelledCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cancelled : 0"
+                android:textColor="#F44336"
+                android:textSize="16sp"/>
+
+
+        </LinearLayout>
+
+
+
+        <!-- Recent Appointments -->
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Recent Appointments"
+            android:textColor="@color/textDark"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerRecentAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false"/>
+
+
+
+
+        <!-- Recent Patients -->
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Recent Patients"
+            android:textColor="@color/textDark"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerRecentPatients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Management"
+            android:textColor="@color/textDark"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+        <Button
+            android:id="@+id/btnManageAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/primaryBlue"
+            android:text="Manage Appointments"
+            android:textAllCaps="false"
+            android:textColor="@color/white"/>
+
+
+        <Button
+            android:id="@+id/btnManageDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/deepBlue"
+            android:text="Manage Doctors"
+            android:textAllCaps="false"
+            android:textColor="@color/white"/>
+
+
+        <Button
+            android:id="@+id/btnManagePatients"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/primaryBlue"
+            android:text="Manage Patients"
+            android:textAllCaps="false"
+            android:textColor="@color/white"/>
+        <!-- Bottom Healthcare Banner -->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_soft_card"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Streamline Your Healthcare Services"
+                android:textColor="@color/primaryBlue"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Manage appointments, doctors, patients and reports in one place"
+                android:textColor="@color/textGray"
+                android:textSize="14sp"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
