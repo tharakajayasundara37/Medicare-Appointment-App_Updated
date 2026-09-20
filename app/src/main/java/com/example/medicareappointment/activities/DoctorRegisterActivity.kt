@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medicareappointment.R
 import com.example.medicareappointment.database.DatabaseHelper
@@ -22,6 +23,7 @@ class DoctorRegisterActivity : AppCompatActivity() {
 
 
     private lateinit var databaseHelper: DatabaseHelper
+
 
 
     private lateinit var doctorName: EditText
@@ -47,10 +49,14 @@ class DoctorRegisterActivity : AppCompatActivity() {
     private lateinit var btnUploadDocument: Button
     private lateinit var txtSelectedDocument: TextView
 
+    private lateinit var btnUploadProfileImage: Button
+
+    private lateinit var imgDoctorProfile: ImageView
+
 
     private lateinit var registerButton: Button
 
-
+    private var selectedProfileImage = ""
     private var selectedDocument = ""
 
 
@@ -83,6 +89,8 @@ class DoctorRegisterActivity : AppCompatActivity() {
 
         setupDocumentUpload()
 
+
+        setupProfileImageUpload()
 
 
         registerButton.setOnClickListener {
@@ -160,6 +168,15 @@ class DoctorRegisterActivity : AppCompatActivity() {
             findViewById(R.id.txtSelectedDocument)
 
 
+        btnUploadProfileImage =
+
+            findViewById(R.id.btnUploadProfileImage)
+
+
+
+        imgDoctorProfile =
+
+            findViewById(R.id.imgDoctorProfile)
 
         registerButton =
             findViewById(R.id.btnSubmitDoctor)
@@ -424,6 +441,13 @@ class DoctorRegisterActivity : AppCompatActivity() {
             )
 
 
+            intent.addFlags(
+
+                Intent.FLAG_GRANT_READ_URI_PERMISSION
+
+            )
+
+
             startActivityForResult(
 
                 intent,
@@ -437,10 +461,42 @@ class DoctorRegisterActivity : AppCompatActivity() {
 
 
     }
+    private fun setupProfileImageUpload() {
 
 
+        btnUploadProfileImage.setOnClickListener {
 
 
+            val intent = Intent(
+
+                Intent.ACTION_OPEN_DOCUMENT
+
+            )
+
+
+            intent.type = "image/*"
+
+
+            intent.addCategory(
+
+                Intent.CATEGORY_OPENABLE
+
+            )
+
+
+            startActivityForResult(
+
+                intent,
+
+                200
+
+            )
+
+
+        }
+
+
+    }
 
     override fun onActivityResult(
 
@@ -464,21 +520,12 @@ class DoctorRegisterActivity : AppCompatActivity() {
         )
 
 
-
-        if (
-
-            requestCode == 100 &&
-
-            resultCode == RESULT_OK
-
-        ) {
+        if(resultCode == RESULT_OK && data != null){
 
 
-            val uri = data?.data
+            val uri = data.data
 
-
-
-            if (uri != null) {
+            if(uri != null){
 
 
                 try {
@@ -493,22 +540,91 @@ class DoctorRegisterActivity : AppCompatActivity() {
                     )
 
 
-                } catch (e: Exception) {
+                }catch(e:Exception){
+
+
+                    e.printStackTrace()
 
 
                 }
 
 
 
-                selectedDocument =
 
-                    uri.toString()
+                // Qualification Document
+
+                if(requestCode == 100){
+
+
+                    selectedDocument =
+
+                        uri.toString()
 
 
 
-                txtSelectedDocument.text =
+                    txtSelectedDocument.text =
 
-                    getFileName(uri)
+                        getFileName(uri)
+
+
+
+                }
+
+
+
+
+
+                // Doctor Profile Image
+
+                if(requestCode == 200){
+
+
+                    selectedProfileImage =
+
+                        uri.toString()
+
+
+
+                    try {
+
+
+                        val bitmap =
+
+                            android.graphics.BitmapFactory.decodeStream(
+
+                                contentResolver.openInputStream(uri)
+
+                            )
+
+
+
+                        imgDoctorProfile.setImageBitmap(bitmap)
+
+
+
+                    } catch(e: Exception){
+
+
+                        e.printStackTrace()
+
+
+
+                        Toast.makeText(
+
+                            this,
+
+                            "Image loading failed",
+
+                            Toast.LENGTH_SHORT
+
+                        ).show()
+
+
+                    }
+
+
+
+                }
 
 
             }
@@ -518,9 +634,6 @@ class DoctorRegisterActivity : AppCompatActivity() {
 
 
     }
-
-
-
 
 
     private fun getFileName(uri: Uri): String {
@@ -672,8 +785,9 @@ class DoctorRegisterActivity : AppCompatActivity() {
 
             passwordValue.isEmpty() ||
 
-            selectedDocument.isEmpty()
+            selectedDocument.isEmpty() ||
 
+            selectedProfileImage.isEmpty()
         ) {
 
 
@@ -714,6 +828,8 @@ class DoctorRegisterActivity : AppCompatActivity() {
 
                 selectedDocument,
 
+                selectedProfileImage,
+
                 daysValue,
 
                 startValue,
@@ -723,7 +839,6 @@ class DoctorRegisterActivity : AppCompatActivity() {
                 appointmentDuration
 
             )
-
 
 
 
@@ -792,8 +907,10 @@ class DoctorRegisterActivity : AppCompatActivity() {
         txtSelectedDocument.text =
 
             "No document selected"
+
         selectedDocument = ""
 
+        selectedProfileImage = ""
     }
 
 }

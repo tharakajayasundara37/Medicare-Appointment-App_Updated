@@ -20,7 +20,7 @@ class DatabaseHelper(context: Context) :
 
         private const val DATABASE_NAME = "medicare.db"
 
-        private const val DATABASE_VERSION = 11
+        private const val DATABASE_VERSION = 12
         const val TABLE_PATIENT = "patients"
         const val COL_PATIENT_ID = "id"
 
@@ -85,6 +85,7 @@ class DatabaseHelper(context: Context) :
 
         const val COL_DOCTOR_DOCUMENT = "document"
 
+        const val COL_DOCTOR_PROFILE_IMAGE = "profile_image"
         const val COL_DOCTOR_WORKING_DAYS = "working_days"
 
         const val COL_DOCTOR_START_TIME = "start_time"
@@ -198,6 +199,9 @@ class DatabaseHelper(context: Context) :
                 $COL_DOCTOR_EXPERIENCE TEXT,
 
                 $COL_DOCTOR_DOCUMENT TEXT,
+                
+                $COL_DOCTOR_PROFILE_IMAGE TEXT,
+
 
                 $COL_DOCTOR_WORKING_DAYS TEXT,
 
@@ -418,6 +422,20 @@ class DatabaseHelper(context: Context) :
             )
 
         }
+        if (oldVersion < 12) {
+
+
+            db.execSQL(
+
+                """
+        ALTER TABLE $TABLE_DOCTOR
+        ADD COLUMN $COL_DOCTOR_PROFILE_IMAGE TEXT DEFAULT ''
+        """.trimIndent()
+
+            )
+
+
+        }
 
         if (oldVersion < 8) {
 
@@ -635,6 +653,8 @@ class DatabaseHelper(context: Context) :
 
         document: String,
 
+        profileImage: String,
+
         workingDays: String,
 
         startTime: String,
@@ -703,6 +723,11 @@ class DatabaseHelper(context: Context) :
             put(
                 COL_DOCTOR_DOCUMENT,
                 document
+            )
+
+            put(
+                COL_DOCTOR_PROFILE_IMAGE,
+                profileImage
             )
 
 
@@ -869,40 +894,49 @@ class DatabaseHelper(context: Context) :
 
     }
 
-
     fun updateAppointmentStatus(
 
-        id: Int,
+        appointmentId: Int,
 
         status: String
 
-    ): Int {
+    ): Boolean {
 
 
         val db = writableDatabase
 
 
-        val values = ContentValues().apply {
 
-            put(
-                COL_APPOINTMENT_STATUS,
-                status
-            )
-
-        }
+        val values = ContentValues()
 
 
-        return db.update(
+
+        values.put(
+            COL_APPOINTMENT_STATUS,
+            status
+        )
+
+
+
+        val result = db.update(
 
             TABLE_APPOINTMENT,
 
             values,
 
-            "$COL_APPOINTMENT_ID=?",
+            "id=?",
 
-            arrayOf(id.toString())
+            arrayOf(
+
+                appointmentId.toString()
+
+            )
 
         )
+
+
+
+        return result > 0
 
     }
 
@@ -984,15 +1018,17 @@ class DatabaseHelper(context: Context) :
 
                         document = cursor.getString(9) ?: "",
 
-                        workingDays = cursor.getString(10) ?: "",
+                        profileImage = cursor.getString(10) ?: "",
 
-                        startTime = cursor.getString(11) ?: "",
+                        workingDays = cursor.getString(11) ?: "",
 
-                        endTime = cursor.getString(12) ?: "",
+                        startTime = cursor.getString(12) ?: "",
 
-                        appointmentDuration = cursor.getInt(13),
+                        endTime = cursor.getString(13) ?: "",
 
-                        status = cursor.getString(14) ?: "Pending"
+                        appointmentDuration = cursor.getInt(14),
+
+                        status = cursor.getString(15) ?: "Pending"
                     )
                 )
             } while (cursor.moveToNext())
@@ -1151,8 +1187,7 @@ class DatabaseHelper(context: Context) :
                         appointmentTime = cursor.getString(5)
                             ?: "",
 
-                        appointmentStatus = cursor.getString(6)
-                            ?: "Pending"
+                        appointmentStatus = cursor.getString(6) ?: "Pending"
 
                     )
 
@@ -1386,8 +1421,7 @@ class DatabaseHelper(context: Context) :
 
                         appointmentTime = cursor.getString(5),
 
-                        appointmentStatus = cursor.getString(6)
-
+                        appointmentStatus = cursor.getString(6) ?: "Pending"
                     )
 
                 )
@@ -1839,15 +1873,18 @@ class DatabaseHelper(context: Context) :
 
                         document = cursor.getString(9) ?: "",
 
-                        workingDays = cursor.getString(10) ?: "",
+                        profileImage = cursor.getString(10) ?: "",
 
-                        startTime = cursor.getString(11) ?: "",
 
-                        endTime = cursor.getString(12) ?: "",
+                        workingDays = cursor.getString(11) ?: "",
 
-                        appointmentDuration = cursor.getInt(13),
+                        startTime = cursor.getString(12) ?: "",
 
-                        status = cursor.getString(14) ?: "Pending"
+                        endTime = cursor.getString(13) ?: "",
+
+                        appointmentDuration = cursor.getInt(14),
+
+                        status = cursor.getString(15) ?: "Pending"
                     )
                 )
             } while (cursor.moveToNext())
@@ -1917,16 +1954,17 @@ class DatabaseHelper(context: Context) :
 
                 document = cursor.getString(9) ?: "",
 
-                workingDays = cursor.getString(10) ?: "",
+                profileImage = cursor.getString(10) ?: "",
 
-                startTime = cursor.getString(11) ?: "",
+                workingDays = cursor.getString(11) ?: "",
 
-                endTime = cursor.getString(12) ?: "",
+                startTime = cursor.getString(12) ?: "",
 
-                appointmentDuration = cursor.getInt(13),
+                endTime = cursor.getString(13) ?: "",
 
-                status = cursor.getString(14) ?: "Pending"
+                appointmentDuration = cursor.getInt(14),
 
+                status = cursor.getString(15) ?: "Pending"
             )
         }
         cursor.close()
@@ -2189,5 +2227,257 @@ class DatabaseHelper(context: Context) :
             )
         }
         cursor.close()
+    }
+    fun getDoctorById(
+        doctorId: Int
+    ): Doctor? {
+
+
+        val db = readableDatabase
+
+
+        val cursor = db.rawQuery(
+
+            """
+        SELECT *
+        FROM $TABLE_DOCTOR
+        WHERE $COL_DOCTOR_ID = ?
+        LIMIT 1
+        """.trimIndent(),
+
+            arrayOf(
+                doctorId.toString()
+            )
+
+        )
+
+
+        var doctor: Doctor? = null
+
+
+        if(cursor.moveToFirst()){
+
+
+            doctor = Doctor(
+
+                id = cursor.getInt(0),
+
+                name = cursor.getString(1) ?: "",
+
+                specialization = cursor.getString(2) ?: "",
+
+                phone = cursor.getString(3) ?: "",
+
+                email = cursor.getString(4) ?: "",
+
+                password = cursor.getString(5) ?: "",
+
+                qualification = cursor.getString(6) ?: "",
+
+                registrationNumber = cursor.getString(7) ?: "",
+
+                experience = cursor.getString(8) ?: "",
+
+                document = cursor.getString(9) ?: "",
+
+                profileImage = cursor.getString(10) ?: "",
+
+                workingDays = cursor.getString(11) ?: "",
+
+                startTime = cursor.getString(12) ?: "",
+
+                endTime = cursor.getString(13) ?: "",
+
+                appointmentDuration = cursor.getInt(14),
+
+                status = cursor.getString(15) ?: "Pending"
+
+            )
+
+        }
+
+
+        cursor.close()
+
+
+        return doctor
+
+    }
+
+    fun getDoctorAppointmentCount(
+        doctorId: Int
+    ): Int {
+
+
+        val db = readableDatabase
+
+
+        val cursor = db.rawQuery(
+
+            """
+        SELECT COUNT(*)
+        FROM $TABLE_APPOINTMENT
+        WHERE doctor_id = ?
+        """.trimIndent(),
+
+            arrayOf(
+                doctorId.toString()
+            )
+
+        )
+
+
+        var count = 0
+
+
+        if(cursor.moveToFirst()){
+
+            count = cursor.getInt(0)
+
+        }
+
+
+        cursor.close()
+
+
+        return count
+
+    }
+    fun getDoctorUpcomingAppointmentCount(
+        doctorId: Int
+    ): Int {
+
+
+        val db = readableDatabase
+
+
+        val cursor = db.rawQuery(
+
+            """
+        SELECT COUNT(*)
+
+        FROM $TABLE_APPOINTMENT
+
+        WHERE $COL_APPOINTMENT_DOCTOR_ID = ?
+
+        AND $COL_APPOINTMENT_STATUS = 'Pending'
+
+        """.trimIndent(),
+
+            arrayOf(
+                doctorId.toString()
+            )
+
+        )
+
+
+        var count = 0
+
+
+        if(cursor.moveToFirst()){
+
+            count = cursor.getInt(0)
+
+        }
+
+
+        cursor.close()
+
+
+        return count
+
+    }
+    fun getDoctorAppointments(
+        doctorId: Int
+    ): ArrayList<Appointment> {
+
+
+        val appointments = ArrayList<Appointment>()
+
+
+        val db = readableDatabase
+
+
+
+        val cursor = db.rawQuery(
+
+            """
+        SELECT 
+            a.*,
+            p.name,
+            p.phone
+
+        FROM $TABLE_APPOINTMENT a
+
+        LEFT JOIN $TABLE_PATIENT p
+
+        ON a.$COL_APPOINTMENT_PATIENT_ID = p.$COL_PATIENT_ID
+
+
+        WHERE a.$COL_APPOINTMENT_DOCTOR_ID = ?
+
+        ORDER BY a.$COL_APPOINTMENT_ID DESC
+
+        """.trimIndent(),
+
+            arrayOf(
+                doctorId.toString()
+            )
+
+        )
+
+
+
+        if(cursor.moveToFirst()){
+
+
+            do{
+
+
+                appointments.add(
+
+                    Appointment(
+
+                        id = cursor.getInt(0),
+
+
+                        patientId = cursor.getInt(1),
+
+
+                        doctorId = cursor.getInt(2),
+
+
+                        patientName = cursor.getString(8) ?: "",
+
+
+                        patientPhone = cursor.getString(9) ?: "",
+
+
+                        doctorName = cursor.getString(3) ?: "",
+
+
+                        appointmentDate = cursor.getString(4) ?: "",
+
+
+                        appointmentTime = cursor.getString(5) ?: "",
+
+
+                        appointmentStatus = cursor.getString(6) ?: "Pending"
+                    )
+
+                )
+
+
+            }while(cursor.moveToNext())
+
+
+        }
+
+
+        cursor.close()
+
+
+        return appointments
+
     }
 }

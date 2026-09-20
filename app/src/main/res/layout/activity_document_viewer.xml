@@ -13,6 +13,7 @@
     android:background="@color/backgroundColor">
 
 
+
     <TextView
 
         android:layout_width="match_parent"
@@ -31,6 +32,8 @@
 
 
 
+
+
     <ImageView
 
         android:id="@+id/imgDocument"
@@ -45,19 +48,10 @@
 
         android:scaleType="fitCenter"
 
+        android:adjustViewBounds="true"
+
         android:visibility="gone"/>
 
-
-
-    <WebView
-
-        android:id="@+id/webDocument"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="0dp"
-
-        android:layout_weight="1"/>
 
 
 </LinearLayout>

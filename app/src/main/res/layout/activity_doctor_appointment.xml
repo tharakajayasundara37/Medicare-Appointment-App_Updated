@@ -8,9 +8,9 @@
 
     android:orientation="vertical"
 
-    android:background="@color/backgroundColor"
+    android:padding="20dp"
 
-    android:padding="20dp">
+    android:background="@color/backgroundColor">
 
 
     <TextView
@@ -26,7 +26,6 @@
         android:textStyle="bold"
 
         android:textColor="@color/primaryBlue"/>
-
 
 
 

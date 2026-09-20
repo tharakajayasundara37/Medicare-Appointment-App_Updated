@@ -22,6 +22,7 @@
         android:theme="@style/Theme.MediCareAppointment">
 
 
+
         <activity
             android:name=".activities.DocumentViewerActivity"
             android:exported="false" />
@@ -62,24 +63,76 @@
             android:exported="false" />
 
 
+
         <activity
             android:name=".activities.PatientListActivity"
             android:exported="false" />
 
 
-        <!-- Doctor Registration -->
+
+        <!-- Doctor -->
 
         <activity
             android:name=".activities.DoctorRegisterActivity"
             android:exported="false" />
 
 
-        <!-- Patient Registration (Added) -->
+        <activity
+            android:name=".activities.DoctorDashboardActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".activities.DoctorProfileActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".activities.DoctorAppointmentActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".activities.DoctorManagementActivity"
+            android:exported="false" />
+
+
+
+
+        <!-- Patient -->
 
         <activity
             android:name=".activities.PatientRegisterActivity"
             android:exported="false" />
 
+
+        <activity
+            android:name=".activities.PatientDashboardActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".activities.PatientAppointmentActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".activities.PatientProfileActivity"
+            android:exported="false" />
+
+
+
+
+        <!-- Admin -->
+
+        <activity
+            android:name=".activities.AdminProfileActivity"
+            android:exported="false" />
+
+
+
+
+        <!-- Common -->
 
         <activity
             android:name=".activities.DashboardActivity"
@@ -92,35 +145,13 @@
 
 
         <activity
-            android:name=".activities.AdminProfileActivity"
-            android:exported="false" />
-
-
-        <activity
-            android:name=".activities.DoctorManagementActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".activities.PatientDashboardActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".activities.DoctorDashboardActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.PatientAppointmentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.PatientAppointmentActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".activities.PatientProfileActivity"
-            android:exported="false" />
-
-        <activity
             android:name=".activities.RegisterSelectionActivity"
             android:exported="false" />
+
+
+
+
+        <!-- Launcher -->
 
         <activity
             android:name=".activities.SplashActivity"
@@ -140,9 +171,11 @@
         </activity>
 
 
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
 
 
     </application>

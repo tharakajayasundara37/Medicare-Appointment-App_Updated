@@ -38,6 +38,7 @@
 
 
 
+
         <TextView
 
             android:layout_width="wrap_content"
@@ -51,6 +52,52 @@
             android:textColor="@color/textGray"
 
             android:textSize="15sp"/>
+
+
+
+
+
+        <!-- Profile Image -->
+        <ImageView
+
+            android:id="@+id/imgDoctorProfile"
+
+            android:layout_width="120dp"
+
+            android:layout_height="120dp"
+
+            android:layout_gravity="center"
+
+            android:layout_marginTop="20dp"
+
+            android:src="@drawable/ic_profile"
+
+            android:scaleType="centerCrop"
+
+            android:background="@drawable/bg_circle_image"
+
+            android:padding="3dp"/>
+
+
+
+        <Button
+
+            android:id="@+id/btnUploadProfileImage"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="55dp"
+
+            android:layout_marginTop="12dp"
+
+            android:text="Upload Profile Image"
+
+            android:textAllCaps="false"
+
+            android:backgroundTint="@color/primaryBlue"
+
+            android:textColor="@color/white"/>
+
 
 
 
@@ -92,7 +139,6 @@
             android:background="@drawable/bg_soft_card"
 
             android:padding="16dp"/>
-
 
 
 
@@ -142,7 +188,6 @@
 
 
 
-
         <EditText
 
             android:id="@+id/etDoctorPassword"
@@ -165,7 +210,6 @@
 
 
 
-
         <Spinner
 
             android:id="@+id/spinnerQualification"
@@ -176,10 +220,7 @@
 
             android:layout_marginTop="12dp"
 
-            android:background="@drawable/bg_soft_card"
-
-            android:paddingStart="16dp"/>
-
+            android:background="@drawable/bg_soft_card"/>
 
 
 
@@ -200,7 +241,6 @@
             android:background="@drawable/bg_soft_card"
 
             android:padding="16dp"/>
-
 
 
 
@@ -228,8 +268,6 @@
 
 
 
-
-
         <Spinner
 
             android:id="@+id/spinnerWorkingDays"
@@ -240,12 +278,7 @@
 
             android:layout_marginTop="12dp"
 
-            android:background="@drawable/bg_soft_card"
-
-            android:paddingStart="16dp"/>
-
-
-
+            android:background="@drawable/bg_soft_card"/>
 
 
 
@@ -275,9 +308,6 @@
 
 
 
-
-
-
         <EditText
 
             android:id="@+id/etEndTime"
@@ -302,11 +332,6 @@
 
 
 
-
-
-
-        <!-- Appointment Duration -->
-
         <TextView
 
             android:layout_width="wrap_content"
@@ -317,9 +342,9 @@
 
             android:text="Appointment Duration"
 
-            android:textColor="@color/textGray"
+            android:textColor="@color/textGray"/>
 
-            android:textSize="14sp"/>
+
 
 
 
@@ -333,13 +358,7 @@
 
             android:layout_marginTop="8dp"
 
-            android:background="@drawable/bg_soft_card"
-
-            android:paddingStart="16dp"/>
-
-
-
-
+            android:background="@drawable/bg_soft_card"/>
 
 
 
@@ -355,10 +374,7 @@
 
             android:text="Qualification Document"
 
-            android:textColor="@color/textGray"
-
-            android:textSize="14sp"/>
-
+            android:textColor="@color/textGray"/>
 
 
 
@@ -372,8 +388,6 @@
 
             android:layout_height="55dp"
 
-            android:layout_marginTop="8dp"
-
             android:text="Choose Document"
 
             android:textAllCaps="false"
@@ -381,7 +395,6 @@
             android:backgroundTint="@color/primaryBlue"
 
             android:textColor="@color/white"/>
-
 
 
 
@@ -399,11 +412,7 @@
 
             android:text="No document selected"
 
-            android:textColor="@color/textGray"
-
-            android:textSize="14sp"/>
-
-
+            android:textColor="@color/textGray"/>
 
 
 
@@ -428,6 +437,7 @@
             android:textColor="@color/white"
 
             android:backgroundTint="@color/primaryBlue"/>
+
 
 
 
