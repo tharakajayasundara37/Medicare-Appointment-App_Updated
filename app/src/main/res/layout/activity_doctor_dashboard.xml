@@ -1,181 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
-    android:layout_width="match_parent"
-
-    android:layout_height="match_parent"
-
-    android:background="@color/backgroundColor">
+<?xml version='1.0' encoding='utf-8'?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/backgroundColor">
 
 
-    <LinearLayout
-
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
-        android:orientation="vertical"
-
-        android:padding="24dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
 
 
 
 
 
-        <!-- Header -->
+        
 
-        <LinearLayout
-
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-
-            android:orientation="horizontal"
-
-            android:gravity="center_vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
 
 
 
-            <TextView
-
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-
-                android:layout_weight="1"
-
-                android:text="Doctor Dashboard"
-
-                android:textSize="28sp"
-
-                android:textStyle="bold"
-
-                android:textColor="@color/primaryBlue"/>
-            <com.google.android.material.imageview.ShapeableImageView
-
-                android:id="@+id/imgDoctorDashboardProfile"
-
-                android:layout_width="55dp"
-
-                android:layout_height="55dp"
-
-                android:src="@drawable/ic_profile"
-
-                android:scaleType="centerCrop"
-
-                app:shapeAppearanceOverlay="@style/CircleImageStyle"
-
-                app:strokeColor="@color/primaryBlue"
-
-                app:strokeWidth="2dp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Doctor Dashboard" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/primaryBlue" />
+            <com.google.android.material.imageview.ShapeableImageView android:id="@+id/imgDoctorDashboardProfile" android:layout_width="55dp" android:layout_height="55dp" android:src="@drawable/ic_profile" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/CircleImageStyle" app:strokeColor="@color/primaryBlue" app:strokeWidth="2dp" />
 
 
 
         </LinearLayout>
 
-        <!-- Doctor Profile Card -->
+        
 
 
-        <androidx.cardview.widget.CardView
-
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="20dp"
-
-            app:cardCornerRadius="18dp"
-
-            app:cardElevation="5dp">
+        <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="136dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp" android:layout_marginTop="16dp" android:layout_marginBottom="8dp" android:src="@drawable/care_hospital_banner" android:scaleType="centerCrop" android:importantForAccessibility="no" app:shapeAppearanceOverlay="@style/CareBannerShape" /><androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" app:cardCornerRadius="16dp" app:cardElevation="1dp" app:cardBackgroundColor="@color/cardColor">
 
 
-            <LinearLayout
-
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-
-                android:padding="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
 
 
 
 
 
-                <TextView
-
-                    android:id="@+id/txtDoctorName"
-
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-
-                    android:text="Dr. Doctor Name"
-
-                    android:textSize="22sp"
-
-                    android:textStyle="bold"
-
-                    android:textColor="@color/textDark"/>
+                <TextView android:id="@+id/txtDoctorName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dr. Doctor Name" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/textDark" />
 
 
 
 
 
-                <TextView
-
-                    android:id="@+id/txtDoctorSpecialization"
-
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="8dp"
-
-                    android:text="Cardiologist"
-
-                    android:textSize="16sp"
-
-                    android:textColor="@color/textGray"/>
+                <TextView android:id="@+id/txtDoctorSpecialization" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Cardiologist" android:textSize="16sp" android:textColor="@color/textGray" />
 
 
 
 
 
-                <TextView
-
-                    android:id="@+id/txtWorkingTime"
-
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="8dp"
-
-                    android:text="Monday - Friday | 09:00 AM - 05:00 PM"
-
-                    android:textColor="@color/textGray"/>
+                <TextView android:id="@+id/txtWorkingTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Monday - Friday | 09:00 AM - 05:00 PM" android:textColor="@color/textGray" />
 
 
 
 
 
-                <TextView
-
-                    android:id="@+id/txtDuration"
-
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginTop="8dp"
-
-                    android:text="Appointment Duration : 30 Minutes"
-
-                    android:textColor="@color/textGray"/>
+                <TextView android:id="@+id/txtDuration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Appointment Duration : 30 Minutes" android:textColor="@color/textGray" />
 
 
 
@@ -192,94 +68,38 @@
 
 
 
-        <!-- Statistics -->
+        
 
 
-        <LinearLayout
-
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="20dp"
-
-            android:orientation="horizontal">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="horizontal">
 
 
 
 
 
-            <androidx.cardview.widget.CardView
-
-                android:layout_width="0dp"
-
-                android:layout_height="120dp"
-
-                android:layout_weight="1"
-
-                app:cardCornerRadius="16dp"
-
-                app:cardElevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="120dp" android:layout_weight="1" app:cardCornerRadius="16dp" app:cardElevation="1dp" app:cardBackgroundColor="@color/cardColor">
 
 
 
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-
-                    android:gravity="center"
-
-                    android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
 
 
 
 
 
-                    <TextView
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="Today's"
-
-                        android:textSize="15sp"
-
-                        android:textColor="@color/textGray"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Today's" android:textSize="15sp" android:textColor="@color/textGray" />
 
 
 
 
 
-                    <TextView
-
-                        android:id="@+id/txtTodayCount"
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="0"
-
-                        android:textSize="30sp"
-
-                        android:textStyle="bold"
-
-                        android:textColor="@color/primaryBlue"/>
+                    <TextView android:id="@+id/txtTodayCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/primaryBlue" />
 
 
 
 
 
-                    <TextView
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="Appointments"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Appointments" />
 
 
 
@@ -297,11 +117,7 @@
 
 
 
-            <Space
-
-                android:layout_width="12dp"
-
-                android:layout_height="1dp"/>
+            <Space android:layout_width="12dp" android:layout_height="1dp" />
 
 
 
@@ -310,79 +126,31 @@
 
 
 
-            <androidx.cardview.widget.CardView
-
-                android:layout_width="0dp"
-
-                android:layout_height="120dp"
-
-                android:layout_weight="1"
-
-                app:cardCornerRadius="16dp"
-
-                app:cardElevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="120dp" android:layout_weight="1" app:cardCornerRadius="16dp" app:cardElevation="1dp" app:cardBackgroundColor="@color/cardColor">
 
 
 
 
 
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-
-                    android:gravity="center"
-
-                    android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
 
 
 
 
 
-                    <TextView
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="Upcoming"
-
-                        android:textSize="15sp"
-
-                        android:textColor="@color/textGray"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Upcoming" android:textSize="15sp" android:textColor="@color/textGray" />
 
 
 
 
 
-                    <TextView
-
-                        android:id="@+id/txtUpcomingCount"
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="0"
-
-                        android:textSize="30sp"
-
-                        android:textStyle="bold"
-
-                        android:textColor="@color/primaryBlue"/>
+                    <TextView android:id="@+id/txtUpcomingCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/primaryBlue" />
 
 
 
 
 
-                    <TextView
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="Appointments"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Appointments" />
 
 
 
@@ -408,27 +176,11 @@
 
 
 
-        <!-- Buttons -->
+        
 
 
 
-        <Button
-
-            android:id="@+id/btnDoctorProfile"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="25dp"
-
-            android:text="My Profile"
-
-            android:textAllCaps="false"
-
-            android:backgroundTint="@color/primaryBlue"
-
-            android:textColor="@color/white"/>
+        <Button android:id="@+id/btnDoctorProfile" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="25dp" android:text="My Profile" android:textAllCaps="false" android:backgroundTint="@color/primaryBlue" android:textColor="@color/white" android:textSize="14sp" android:minHeight="48dp" android:fontFamily="sans-serif-medium" android:background="@drawable/bg_button_primary" />
 
 
 
@@ -436,23 +188,7 @@
 
 
 
-        <Button
-
-            android:id="@+id/btnDoctorAppointments"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="12dp"
-
-            android:text="My Appointments"
-
-            android:textAllCaps="false"
-
-            android:backgroundTint="@color/primaryBlue"
-
-            android:textColor="@color/white"/>
+        <Button android:id="@+id/btnDoctorAppointments" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="12dp" android:text="My Appointments" android:textAllCaps="false" android:backgroundTint="@color/primaryBlue" android:textColor="@color/white" android:textSize="14sp" android:minHeight="48dp" android:fontFamily="sans-serif-medium" android:background="@drawable/bg_button_primary" />
 
 
 
@@ -460,23 +196,7 @@
 
 
 
-        <Button
-
-            android:id="@+id/btnDoctorLogout"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="12dp"
-
-            android:text="Logout"
-
-            android:textAllCaps="false"
-
-            android:backgroundTint="#F44336"
-
-            android:textColor="@color/white"/>
+        <Button android:id="@+id/btnDoctorLogout" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="12dp" android:text="Logout" android:textAllCaps="false" android:backgroundTint="#F44336" android:textColor="@color/white" android:textSize="14sp" android:minHeight="48dp" android:fontFamily="sans-serif-medium" android:background="@drawable/bg_button_primary" />
 
 
 

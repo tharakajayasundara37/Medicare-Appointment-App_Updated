@@ -36,7 +36,8 @@ set APP_HOME=%DIRNAME%
 for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 
 @rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
-set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
+set JAVA_TOOL_OPTIONS=%JAVA_TOOL_OPTIONS% -Djdk.net.unixdomain.tmpdir=.
+set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m" "-Djdk.net.unixdomain.tmpdir=."
 
 @rem Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
@@ -92,3 +93,5 @@ exit /b %EXIT_CODE%
 if "%OS%"=="Windows_NT" endlocal
 
 :omega
+
+

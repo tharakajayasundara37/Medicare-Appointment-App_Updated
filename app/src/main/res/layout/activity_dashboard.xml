@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,6 +14,7 @@
       android:paddingEnd="20dp"
       android:paddingBottom="32dp">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:textColor="@color/primaryBlue"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:letterSpacing="0.18"/>
+            android:letterSpacing="0.18" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,11 +42,10 @@
             android:layout_marginTop="3dp"
             android:text="Good morning"
             android:textColor="@color/textDark"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
       </LinearLayout>
-
 
       <TextView
           android:id="@+id/btnAdminLogin"
@@ -61,49 +60,50 @@
 
     </LinearLayout>
 
-
+    <!-- Hospital banner -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bg_hero"
+        android:background="@drawable/care_hero_background"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
       <TextView
-          android:layout_width="wrap_content"
+          android:layout_width="210dp"
           android:layout_height="wrap_content"
           android:text="Healthcare, made simple"
-          android:textColor="@color/white"
-          android:textSize="25sp"
-          android:textStyle="bold"/>
-
+          android:textColor="@color/textDark"
+          android:textSize="22sp"
+          android:textStyle="bold" />
 
       <TextView
-          android:layout_width="match_parent"
+          android:layout_width="210dp"
           android:layout_height="wrap_content"
           android:layout_marginTop="8dp"
           android:text="Find trusted doctors, manage appointments and access essential care from one place."
-          android:textColor="#D9F2EF"
+          android:textColor="@color/textDark"
           android:textSize="14sp"
-          android:lineSpacingExtra="3dp"/>
-
+          android:lineSpacingExtra="3dp" />
 
       <Button
           android:id="@+id/btnFindDoctor"
-          android:layout_width="match_parent"
+          android:layout_width="160dp"
           android:layout_height="52dp"
           android:layout_marginTop="20dp"
-          android:backgroundTint="@color/white"
+          android:background="@drawable/bg_button_primary"
+          android:backgroundTint="@color/primaryBlue"
           android:text="Find a doctor"
           android:textAllCaps="false"
-          android:textColor="@color/deepBlue"
-          android:textSize="15sp"
-          android:textStyle="bold"/>
+          android:textColor="@color/white"
+          android:textSize="14sp"
+          android:textStyle="bold"
+          android:minHeight="48dp"
+          android:fontFamily="sans-serif-medium" />
 
     </LinearLayout>
 
-
+    <!-- Overview -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,18 +125,17 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:textColor="@color/primaryBlue"
-            android:textSize="28sp"
-            android:textStyle="bold"/>
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Appointments"
             android:textColor="@color/textGray"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
       </LinearLayout>
-
 
       <LinearLayout
           android:layout_width="0dp"
@@ -153,19 +152,20 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:textColor="@color/deepBlue"
-            android:textSize="28sp"
-            android:textStyle="bold"/>
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Family profiles"
             android:textColor="@color/textGray"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
       </LinearLayout>
 
     </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -173,8 +173,7 @@
         android:text="Explore services"
         android:textColor="@color/textDark"
         android:textSize="20sp"
-        android:textStyle="bold"/>
-
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -182,9 +181,9 @@
         android:layout_marginTop="4dp"
         android:text="Everything you need for better care"
         android:textColor="@color/textGray"
-        android:textSize="13sp"/>
+        android:textSize="13sp" />
 
-
+    <!-- Glass cards: Row 1 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -193,22 +192,19 @@
 
       <TextView
           android:id="@+id/btnAppointments"
-          style="@style/ServiceTile"
+          style="@style/GlassServiceTile"
           android:layout_marginEnd="6dp"
-          android:background="@drawable/bg_service_teal"
-          android:text="Appointments\nBook &amp; track"
-          android:textColor="@color/deepBlue"/>
+          android:text="Appointments\nBook &amp; track" />
 
       <TextView
           android:id="@+id/btnPatients"
-          style="@style/ServiceTile"
+          style="@style/GlassServiceTile"
           android:layout_marginStart="6dp"
-          android:background="@drawable/bg_service_warm"
-          android:text="My family\nHealth profiles"/>
+          android:text="My family\nHealth profiles" />
 
     </LinearLayout>
 
-
+    <!-- Glass cards: Row 2 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -217,22 +213,19 @@
 
       <TextView
           android:id="@+id/btnLabTests"
-          style="@style/ServiceTile"
+          style="@style/GlassServiceTile"
           android:layout_marginEnd="6dp"
-          android:background="@drawable/bg_service_warm"
-          android:text="Lab tests\nHome collection"/>
+          android:text="Lab tests\nHome collection" />
 
       <TextView
           android:id="@+id/btnMedicine"
-          style="@style/ServiceTile"
+          style="@style/GlassServiceTile"
           android:layout_marginStart="6dp"
-          android:background="@drawable/bg_service_teal"
-          android:text="Medicine\nUpload prescription"
-          android:textColor="@color/deepBlue"/>
+          android:text="Medicine\nUpload prescription" />
 
     </LinearLayout>
 
-
+    <!-- Glass cards: Row 3 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -241,21 +234,19 @@
 
       <TextView
           android:id="@+id/btnTelehealth"
-          style="@style/ServiceTile"
+          style="@style/GlassServiceTile"
           android:layout_marginEnd="6dp"
-          android:background="@drawable/bg_service_teal"
-          android:text="Video care\nConsult remotely"
-          android:textColor="@color/deepBlue"/>
+          android:text="Video care\nConsult remotely" />
 
       <TextView
           android:id="@+id/btnHealthPackages"
-          style="@style/ServiceTile"
+          style="@style/GlassServiceTile"
           android:layout_marginStart="6dp"
-          android:background="@drawable/bg_service_warm"
-          android:text="Health plans\nCheck-up packages"/>
+          android:text="Health plans\nCheck-up packages" />
 
     </LinearLayout>
 
+    <!-- Emergency assistance -->
     <TextView
         android:id="@+id/btnEmergency"
         android:layout_width="match_parent"
@@ -269,9 +260,9 @@
         android:text="Emergency assistance  •  Call 1990"
         android:textColor="@color/danger"
         android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
-
+    <!-- Recent appointment heading -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -286,7 +277,7 @@
           android:text="Recent appointment"
           android:textColor="@color/textDark"
           android:textSize="20sp"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
 
       <TextView
           android:id="@+id/btnViewAllAppointments"
@@ -296,11 +287,11 @@
           android:paddingHorizontal="8dp"
           android:text="View all"
           android:textColor="@color/primaryBlue"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
 
     </LinearLayout>
 
-
+    <!-- Recent appointment card -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -315,7 +306,7 @@
           android:text="No appointments yet"
           android:textColor="@color/textDark"
           android:textSize="17sp"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
 
       <TextView
           android:id="@+id/txtAppDate1"
@@ -324,18 +315,38 @@
           android:layout_marginTop="7dp"
           android:text="Book your first appointment"
           android:textColor="@color/textGray"
-          android:textSize="14sp"/>
+          android:textSize="14sp" />
 
     </LinearLayout>
 
+    <!-- Existing views required by the activity -->
+    <TextView
+        android:id="@+id/btnViewAllPatients"
+        style="@style/HiddenDashboardView" />
 
-    <TextView android:id="@+id/btnViewAllPatients" style="@style/HiddenDashboardView"/>
-    <TextView android:id="@+id/txtPatientName1" style="@style/HiddenDashboardView"/>
-    <TextView android:id="@+id/txtPatientPhone1" style="@style/HiddenDashboardView"/>
-    <TextView android:id="@+id/txtPatientName2" style="@style/HiddenDashboardView"/>
-    <TextView android:id="@+id/txtPatientPhone2" style="@style/HiddenDashboardView"/>
-    <TextView android:id="@+id/txtAppPatient2" style="@style/HiddenDashboardView"/>
-    <TextView android:id="@+id/txtAppDate2" style="@style/HiddenDashboardView"/>
+    <TextView
+        android:id="@+id/txtPatientName1"
+        style="@style/HiddenDashboardView" />
+
+    <TextView
+        android:id="@+id/txtPatientPhone1"
+        style="@style/HiddenDashboardView" />
+
+    <TextView
+        android:id="@+id/txtPatientName2"
+        style="@style/HiddenDashboardView" />
+
+    <TextView
+        android:id="@+id/txtPatientPhone2"
+        style="@style/HiddenDashboardView" />
+
+    <TextView
+        android:id="@+id/txtAppPatient2"
+        style="@style/HiddenDashboardView" />
+
+    <TextView
+        android:id="@+id/txtAppDate2"
+        style="@style/HiddenDashboardView" />
 
   </LinearLayout>
 

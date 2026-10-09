@@ -1,23 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <style name="Theme.MediCareAppointment" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primaryBlue</item>
         <item name="colorSecondary">@color/softBlue</item>
         <item name="android:windowBackground">@color/backgroundColor</item>
-        <item name="android:statusBarColor">@color/deepBlue</item>
+        <item name="android:statusBarColor">@color/backgroundColor</item>
         <item name="android:navigationBarColor">@color/backgroundColor</item>
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="android:fontFamily">sans</item>
-    </style>
-    <style name="ServiceTile">
-        <item name="android:layout_width">0dp</item><item name="android:layout_height">112dp</item><item name="android:layout_weight">1</item>
-        <item name="android:clickable">true</item><item name="android:focusable">true</item><item name="android:gravity">center</item>
-        <item name="android:padding">12dp</item><item name="android:textAlignment">center</item><item name="android:textColor">@color/textDark</item>
-        <item name="android:textSize">15sp</item><item name="android:textStyle">bold</item>
-    </style>
-    <style name="HiddenDashboardView">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:visibility">gone</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
     <style name="CircleImage">
 

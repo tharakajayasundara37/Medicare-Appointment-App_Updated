@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <color name="primaryBlue">#0D766E</color>
-    <color name="primaryDark">#075B55</color>
-    <color name="deepBlue">#083B4C</color>
-    <color name="softBlue">#E8F7F5</color>
-    <color name="backgroundColor">#F5F8F8</color>
+    <color name="primaryBlue">#467D70</color>
+    <color name="primaryDark">#315E54</color>
+    <color name="deepBlue">#254D44</color>
+    <color name="softBlue">#EAF2EF</color>
+    <color name="backgroundColor">#FAFBFA</color>
     <color name="cardColor">#FFFFFF</color>
-    <color name="textDark">#102A2E</color>
-    <color name="textGray">#61777A</color>
+    <color name="textDark">#182522</color>
+    <color name="textGray">#78817D</color>
     <color name="danger">#D94A4A</color>
-    <color name="success">#178A62</color>
+    <color name="success">#467D70</color>
     <color name="accent">#FFB547</color>
-    <color name="paleTeal">#DDF3F0</color>
+    <color name="paleTeal">#E3EEEA</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="dangerRed">#F44336</color>

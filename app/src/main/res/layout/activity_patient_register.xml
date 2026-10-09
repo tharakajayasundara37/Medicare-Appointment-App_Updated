@@ -1,192 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/backgroundColor">
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:layout_width="match_parent"
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
 
-    android:layout_height="match_parent"
 
-    android:background="@color/backgroundColor">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Patient Registration" android:textColor="@color/primaryBlue" android:textSize="22sp" android:textStyle="bold" />
 
 
-    <LinearLayout
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Create your healthcare account" android:textColor="@color/textGray" android:textSize="15sp" />
 
-        android:layout_width="match_parent"
 
-        android:layout_height="wrap_content"
+        <EditText android:id="@+id/etPatientName" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="25dp" android:hint="Full Name" android:background="@drawable/bg_input_care" android:padding="16dp" android:textColor="@color/textDark" android:textColorHint="@color/textGray" android:textSize="14sp" android:minHeight="52dp" android:paddingStart="16dp" android:paddingEnd="16dp" />
 
-        android:orientation="vertical"
 
-        android:padding="24dp">
 
+        <EditText android:id="@+id/etPatientAge" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="12dp" android:hint="Age" android:inputType="number" android:background="@drawable/bg_input_care" android:padding="16dp" android:textColor="@color/textDark" android:textColorHint="@color/textGray" android:textSize="14sp" android:minHeight="52dp" android:paddingStart="16dp" android:paddingEnd="16dp" />
 
-        <TextView
 
-            android:layout_width="wrap_content"
 
-            android:layout_height="wrap_content"
+        <EditText android:id="@+id/etPatientPhone" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="12dp" android:hint="Phone Number" android:inputType="phone" android:background="@drawable/bg_input_care" android:padding="16dp" android:textColor="@color/textDark" android:textColorHint="@color/textGray" android:textSize="14sp" android:minHeight="52dp" android:paddingStart="16dp" android:paddingEnd="16dp" />
 
-            android:text="Patient Registration"
 
-            android:textColor="@color/primaryBlue"
 
-            android:textSize="28sp"
+        <EditText android:id="@+id/etPatientAddress" android:layout_width="match_parent" android:layout_height="80dp" android:layout_marginTop="12dp" android:hint="Address" android:gravity="top" android:background="@drawable/bg_input_care" android:padding="16dp" android:textColor="@color/textDark" android:textColorHint="@color/textGray" android:textSize="14sp" android:minHeight="52dp" android:paddingStart="16dp" android:paddingEnd="16dp" />
 
-            android:textStyle="bold"/>
 
 
-        <TextView
+        <EditText android:id="@+id/etPatientEmail" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="12dp" android:hint="Email" android:inputType="textEmailAddress" android:background="@drawable/bg_input_care" android:padding="16dp" android:textColor="@color/textDark" android:textColorHint="@color/textGray" android:textSize="14sp" android:minHeight="52dp" android:paddingStart="16dp" android:paddingEnd="16dp" />
 
-            android:layout_width="wrap_content"
 
-            android:layout_height="wrap_content"
 
-            android:layout_marginTop="8dp"
+        <EditText android:id="@+id/etPatientPassword" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="12dp" android:hint="Password" android:inputType="textPassword" android:background="@drawable/bg_input_care" android:padding="16dp" android:textColor="@color/textDark" android:textColorHint="@color/textGray" android:textSize="14sp" android:minHeight="52dp" android:paddingStart="16dp" android:paddingEnd="16dp" />
 
-            android:text="Create your healthcare account"
 
-            android:textColor="@color/textGray"
 
-            android:textSize="15sp"/>
-
-
-        <EditText
-
-            android:id="@+id/etPatientName"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="25dp"
-
-            android:hint="Full Name"
-
-            android:background="@drawable/bg_soft_card"
-
-            android:padding="16dp"/>
-
-
-
-        <EditText
-
-            android:id="@+id/etPatientAge"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="12dp"
-
-            android:hint="Age"
-
-            android:inputType="number"
-
-            android:background="@drawable/bg_soft_card"
-
-            android:padding="16dp"/>
-
-
-
-        <EditText
-
-            android:id="@+id/etPatientPhone"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="12dp"
-
-            android:hint="Phone Number"
-
-            android:inputType="phone"
-
-            android:background="@drawable/bg_soft_card"
-
-            android:padding="16dp"/>
-
-
-
-        <EditText
-
-            android:id="@+id/etPatientAddress"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="80dp"
-
-            android:layout_marginTop="12dp"
-
-            android:hint="Address"
-
-            android:gravity="top"
-
-            android:background="@drawable/bg_soft_card"
-
-            android:padding="16dp"/>
-
-
-
-        <EditText
-
-            android:id="@+id/etPatientEmail"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="12dp"
-
-            android:hint="Email"
-
-            android:inputType="textEmailAddress"
-
-            android:background="@drawable/bg_soft_card"
-
-            android:padding="16dp"/>
-
-
-
-        <EditText
-
-            android:id="@+id/etPatientPassword"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="12dp"
-
-            android:hint="Password"
-
-            android:inputType="textPassword"
-
-            android:background="@drawable/bg_soft_card"
-
-            android:padding="16dp"/>
-
-
-
-        <Button
-
-            android:id="@+id/btnRegisterPatient"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="55dp"
-
-            android:layout_marginTop="25dp"
-
-            android:text="Create Account"
-
-            android:textAllCaps="false"
-
-            android:textStyle="bold"
-
-            android:textColor="@color/white"
-
-            android:backgroundTint="@color/primaryBlue"/>
+        <Button android:id="@+id/btnRegisterPatient" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="25dp" android:text="Create Account" android:textAllCaps="false" android:textStyle="bold" android:textColor="@color/white" android:backgroundTint="@color/primaryBlue" android:textSize="14sp" android:minHeight="48dp" android:fontFamily="sans-serif-medium" android:background="@drawable/bg_button_primary" />
 
 
     </LinearLayout>

@@ -1,48 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/backgroundColor">
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="16dp" android:background="@color/backgroundColor">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Patients"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/textDark" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Patients" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/textDark" />
 
-    <Button
-        android:id="@+id/btnAddPatient"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
-        android:text="➕ Add New Patient"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:backgroundTint="@color/primaryBlue" />
+    <Button android:id="@+id/btnAddPatient" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginTop="20dp" android:text="➕ Add New Patient" android:textAllCaps="false" android:textColor="@android:color/white" android:textSize="14sp" android:backgroundTint="@color/primaryBlue" android:minHeight="48dp" android:fontFamily="sans-serif-medium" android:background="@drawable/bg_button_primary" />
 
-    <EditText
-        android:id="@+id/etSearchPatient"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/bg_soft_card"
-        android:hint="Search patient..."
-        android:paddingStart="18dp"
-        android:paddingEnd="18dp"
-        android:textColor="@color/textDark"
-        android:textColorHint="@color/textGray"
-        android:singleLine="true" />
+    <EditText android:id="@+id/etSearchPatient" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="18dp" android:background="@drawable/bg_input_care" android:hint="Search patient..." android:paddingStart="16dp" android:paddingEnd="16dp" android:textColor="@color/textDark" android:textColorHint="@color/textGray" android:singleLine="true" android:textSize="14sp" android:minHeight="52dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerPatients"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="18dp" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerPatients" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="18dp" />
 
 </LinearLayout>

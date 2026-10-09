@@ -1,123 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/backgroundColor">
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:layout_width="match_parent"
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
 
-    android:layout_height="match_parent"
 
-    android:fillViewport="true"
 
-    android:background="@color/backgroundColor">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Doctor Management" android:textColor="@color/primaryBlue" android:textSize="22sp" android:textStyle="bold" />
 
 
-    <LinearLayout
 
-        android:layout_width="match_parent"
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Manage doctor applications and active doctors" android:textColor="@color/textGray" android:textSize="14sp" />
 
-        android:layout_height="wrap_content"
 
-        android:orientation="vertical"
 
-        android:padding="20dp">
 
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25dp" android:orientation="horizontal">
 
 
-        <TextView
 
-            android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="16dp" app:cardElevation="1dp" app:cardBackgroundColor="@color/cardColor">
 
-            android:layout_height="wrap_content"
 
-            android:text="Doctor Management"
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
 
-            android:textColor="@color/primaryBlue"
 
-            android:textSize="28sp"
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pending" android:textColor="@color/textGray" android:textSize="14sp" />
 
-            android:textStyle="bold" />
 
-
-
-        <TextView
-
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="6dp"
-
-            android:text="Manage doctor applications and active doctors"
-
-            android:textColor="@color/textGray"
-
-            android:textSize="14sp" />
-
-
-
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="25dp"
-
-            android:orientation="horizontal">
-
-
-
-            <androidx.cardview.widget.CardView
-
-                android:layout_width="0dp"
-
-                android:layout_height="110dp"
-
-                android:layout_weight="1"
-
-                android:layout_margin="5dp">
-
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-
-                    android:gravity="center"
-
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="Pending"
-
-                        android:textColor="@color/textGray"
-
-                        android:textSize="14sp" />
-
-
-                    <TextView
-
-                        android:id="@+id/txtPendingDoctorCount"
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="0"
-
-                        android:textColor="@color/primaryBlue"
-
-                        android:textSize="28sp"
-
-                        android:textStyle="bold" />
+                    <TextView android:id="@+id/txtPendingDoctorCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/primaryBlue" android:textSize="22sp" android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -126,56 +37,16 @@
 
 
 
-            <androidx.cardview.widget.CardView
-
-                android:layout_width="0dp"
-
-                android:layout_height="110dp"
-
-                android:layout_weight="1"
-
-                android:layout_margin="5dp">
+            <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="16dp" app:cardElevation="1dp" app:cardBackgroundColor="@color/cardColor">
 
 
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-
-                    android:gravity="center"
-
-                    android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
 
 
-                    <TextView
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="Approved"
-
-                        android:textColor="@color/textGray"
-
-                        android:textSize="14sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Approved" android:textColor="@color/textGray" android:textSize="14sp" />
 
 
-                    <TextView
-
-                        android:id="@+id/txtApprovedDoctorCount"
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="0"
-
-                        android:textColor="@color/primaryBlue"
-
-                        android:textSize="28sp"
-
-                        android:textStyle="bold" />
+                    <TextView android:id="@+id/txtApprovedDoctorCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/primaryBlue" android:textSize="22sp" android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -185,56 +56,16 @@
 
 
 
-            <androidx.cardview.widget.CardView
-
-                android:layout_width="0dp"
-
-                android:layout_height="110dp"
-
-                android:layout_weight="1"
-
-                android:layout_margin="5dp">
+            <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="110dp" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="16dp" app:cardElevation="1dp" app:cardBackgroundColor="@color/cardColor">
 
 
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-
-                    android:gravity="center"
-
-                    android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
 
 
-                    <TextView
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="Rejected"
-
-                        android:textColor="@color/textGray"
-
-                        android:textSize="14sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rejected" android:textColor="@color/textGray" android:textSize="14sp" />
 
 
-                    <TextView
-
-                        android:id="@+id/txtRejectedDoctorCount"
-
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-
-                        android:text="0"
-
-                        android:textColor="@color/primaryBlue"
-
-                        android:textSize="28sp"
-
-                        android:textStyle="bold" />
+                    <TextView android:id="@+id/txtRejectedDoctorCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/primaryBlue" android:textSize="22sp" android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -247,106 +78,26 @@
 
 
 
-        <!-- Filter Buttons -->
+        
 
 
-        <LinearLayout
-
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="25dp"
-
-            android:orientation="horizontal">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25dp" android:orientation="horizontal">
 
 
 
-            <Button
-
-                android:id="@+id/btnPendingDoctors"
-
-                android:layout_width="0dp"
-
-                android:layout_height="48dp"
-
-                android:layout_weight="1"
-
-                android:layout_margin="5dp"
-
-                android:text="Pending"
-
-                android:textSize="12sp"
-
-                android:textAllCaps="false"
-
-                android:maxLines="1"
-
-                android:ellipsize="none"
-
-                android:paddingLeft="2dp"
-
-                android:paddingRight="2dp" />
+            <Button android:id="@+id/btnPendingDoctors" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:layout_margin="5dp" android:text="Pending" android:textSize="14sp" android:textAllCaps="false" android:maxLines="1" android:ellipsize="none" android:paddingLeft="2dp" android:paddingRight="2dp" android:minHeight="48dp" android:fontFamily="sans-serif-medium" android:background="@drawable/bg_button_primary" />
 
 
 
 
 
-            <Button
-
-                android:id="@+id/btnApprovedDoctors"
-
-                android:layout_width="0dp"
-
-                android:layout_height="48dp"
-
-                android:layout_weight="1"
-
-                android:layout_margin="5dp"
-
-                android:text="Approved"
-
-                android:textSize="12sp"
-
-                android:textAllCaps="false"
-
-                android:maxLines="1"
-
-                android:ellipsize="none"
-
-                android:paddingLeft="2dp"
-
-                android:paddingRight="2dp" />
+            <Button android:id="@+id/btnApprovedDoctors" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:layout_margin="5dp" android:text="Approved" android:textSize="14sp" android:textAllCaps="false" android:maxLines="1" android:ellipsize="none" android:paddingLeft="2dp" android:paddingRight="2dp" android:minHeight="48dp" android:fontFamily="sans-serif-medium" android:background="@drawable/bg_button_primary" />
 
 
 
 
 
-            <Button
-
-                android:id="@+id/btnRejectedDoctors"
-
-                android:layout_width="0dp"
-
-                android:layout_height="48dp"
-
-                android:layout_weight="1"
-
-                android:layout_margin="5dp"
-
-                android:text="Rejected"
-
-                android:textSize="12sp"
-
-                android:textAllCaps="false"
-
-                android:maxLines="1"
-
-                android:ellipsize="none"
-
-                android:paddingLeft="2dp"
-
-                android:paddingRight="2dp" />
+            <Button android:id="@+id/btnRejectedDoctors" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:layout_margin="5dp" android:text="Rejected" android:textSize="14sp" android:textAllCaps="false" android:maxLines="1" android:ellipsize="none" android:paddingLeft="2dp" android:paddingRight="2dp" android:minHeight="48dp" android:fontFamily="sans-serif-medium" android:background="@drawable/bg_button_primary" />
 
 
         </LinearLayout>
@@ -355,17 +106,7 @@
 
 
 
-        <androidx.recyclerview.widget.RecyclerView
-
-            android:id="@+id/recyclerDoctorManagement"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="20dp"
-
-            android:nestedScrollingEnabled="false" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerDoctorManagement" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:nestedScrollingEnabled="false" />
 
 
     </LinearLayout>
